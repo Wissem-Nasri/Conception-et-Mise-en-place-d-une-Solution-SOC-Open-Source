@@ -86,11 +86,11 @@ integration effectué:
 
 ![image](https://github.com/user-attachments/assets/7bbb3874-8cca-4688-890c-778ee3ab55c3)
 
-### Étape 3: Configuration de MISP pour appeler Cortex
+## 6.3 Configuration de MISP pour appeler Cortex
 
 ![image](https://github.com/user-attachments/assets/279c3864-6339-451f-8d2d-d59b0d0fec2f)
 
-## 6.3 integration entre wazuh et the Hive
+## 6.4 integration entre wazuh et the Hive
 #### Création du script d'intégration personnalisé
 Créez un script Python nommé custom-w2thive.py 
 
