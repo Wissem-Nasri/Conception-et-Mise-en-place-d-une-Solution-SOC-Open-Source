@@ -16,8 +16,6 @@ Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
 ## 3.1. Installation de Docker
 ![image](https://github.com/user-attachments/assets/b5bdd3ae-1261-4f62-a8d5-971a2025459b)
 
-![image](https://github.com/user-attachments/assets/b2da25a6-0883-4830-b6a1-0feb785c3952)
-
 ## 3.3. Installation de Wazuh sur Ubuntu
 ### Préparation du système en mettant à jour les paquets avec apt update et apt upgrade.
 sudo apt update && sudo apt upgrade
@@ -50,5 +48,15 @@ Utilisation de la commande docker-compose up -d pour lancer les conteneurs.
 Commandes pour vérifier si tous les conteneurs sont démarrés correctement (docker ps).
 
 ![image](https://github.com/user-attachments/assets/dd4185d6-6f14-4993-b6dd-c96534d5901b)
+# 5. Intégration entre Cortex, MISP et The Hive
+## 5.1. Intégration entre The Hive et Cortex
+The Hive utilise Cortex comme moteur d’analyse pour automatiser les tâches et enrichir les alertes.
+### Étape 1 : Récupération de la clé API Cortex
+Créez un utilisateur et Générez une clé API.
+![image](https://github.com/user-attachments/assets/fc42a4b8-ce8a-4ff4-8ade-d51a23748bc8)
+![image](https://github.com/user-attachments/assets/d8b3fcc0-1d71-4ee7-93fb-192a01a5b566)
+
+
+
 
 
