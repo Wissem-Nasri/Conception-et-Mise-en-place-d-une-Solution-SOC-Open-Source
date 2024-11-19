@@ -81,7 +81,10 @@ Ce script contient une variable appelée lvl_threshold, définie par défaut à 
 ![image](https://github.com/user-attachments/assets/760ec2bb-1b97-4466-88a8-25fb33d1b5ec)
 Ce script servira à exécuter correctement le fichier Python custom-w2thive.py que vous avez créé.
 #### Activation l'intégration dans la configuration de Wazuh
+
 ![image](https://github.com/user-attachments/assets/4f437e7c-199e-4514-a721-490dfa87499e)
+
 ![image](https://github.com/user-attachments/assets/e118aad2-4a60-4a24-96bc-ead9f59b16b3)
+
 En résumé, cette procédure permet d'intégrer Wazuh et The Hive afin que les alertes de sécurité soient automatiquement transmises à The Hive pour une gestion centralisée.
 
