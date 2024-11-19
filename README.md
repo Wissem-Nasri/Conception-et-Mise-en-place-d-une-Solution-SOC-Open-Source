@@ -23,7 +23,7 @@ sudo apt update && sudo apt upgrade
 ###  Installer curl .
 sudo apt install curl
 ### Télécharger le script d'installation de Wazuh.
-curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+sudo curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 ### Exécuter le script d'installation.
 sudo bash ./wazuh-install.sh -a
 
