@@ -18,7 +18,7 @@ Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
 
 ![image](https://github.com/user-attachments/assets/b5bdd3ae-1261-4f62-a8d5-971a2025459b)
 
-## 3.3. Installation de Wazuh sur Ubuntu
+## 3.2. Installation de Wazuh sur Ubuntu
 ### Préparation du système en mettant à jour les paquets avec apt update et apt upgrade.
 sudo apt update && sudo apt upgrade
 ###  Installer curl .
