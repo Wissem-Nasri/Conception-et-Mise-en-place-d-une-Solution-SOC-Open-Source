@@ -26,7 +26,9 @@ sudo apt install curl
 curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 ### Exécuter le script d'installation.
 sudo bash ./wazuh-install.sh -a
-https://www.youtube.com/watch?v=aCznKXn3KuQ&t=263s
+
+![Capture d'écran 2024-11-19 152853](https://github.com/user-attachments/assets/ca35db49-5f77-4f48-9b93-600aab4f0e3c)
+
 # 4. Création des fichiers nécessaires
 ## 4.1. Configuration de Docker Compose
 Contenu détaillé du fichier docker-compose.yml (voir la configuration ci-dessus).
