@@ -58,8 +58,11 @@ Créez un utilisateur et Générez une clé API.
 ![image](https://github.com/user-attachments/assets/d8b3fcc0-1d71-4ee7-93fb-192a01a5b566)
 ### Étape 2 : Configuration dans The Hive
 ![image](https://github.com/user-attachments/assets/5842ab86-b615-46b8-a4fe-db17a845f814)
-
-
+## 5.2. Intégration entre The Hive et MISP
+MISP fournit des données d’intelligence (indicateurs, menaces) que The Hive peut consommer pour enrichir les investigations.
+### Étape 1 : Configuration de MISP dans The Hive
+Générez une clé API MISP via Administration → Liste des utilisateurs → API Keys.
+![image](https://github.com/user-attachments/assets/e334e1a1-532b-4339-9a9c-2943ed7ce1e4)
 
 
 
