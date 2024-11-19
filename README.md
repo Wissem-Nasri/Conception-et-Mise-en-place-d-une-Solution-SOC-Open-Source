@@ -3,7 +3,9 @@ Présentation du projet et des outils inclus dans l'architecture SOC : The Hive,
 # 2. Pré-requis
 ## 2.1. Système d'exploitation
 Ubuntu 22.04 .
+
 ![image](https://github.com/user-attachments/assets/c61886f2-f42b-4f1e-b902-b5b0fa231d8a)
+
 ## 2.2. Outils nécessaires
 Docker et Docker Compose installés pour les services SOC.
 Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
