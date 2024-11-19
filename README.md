@@ -8,6 +8,7 @@ Ubuntu 22.04 .
 
 ## 2.2. Outils nécessaires
 Docker et Docker Compose installés pour les services SOC.
+
 Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
 
 ![image](https://github.com/user-attachments/assets/9891b488-93cb-498f-b825-9734787bc634)
