@@ -27,6 +27,8 @@ curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 ### Exécuter le script d'installation.
 sudo bash ./wazuh-install.sh -a
 
+#### verification de fonctionnemennt
+
 ![Capture d'écran 2024-11-19 152853](https://github.com/user-attachments/assets/ca35db49-5f77-4f48-9b93-600aab4f0e3c)
 
 # 4. Création des fichiers nécessaires
