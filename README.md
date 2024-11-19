@@ -15,6 +15,9 @@ Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
 # 3. Installation des dépendances
 ## 3.1. Installation de Docker
 ![image](https://github.com/user-attachments/assets/b5bdd3ae-1261-4f62-a8d5-971a2025459b)
+
+![image](https://github.com/user-attachments/assets/b2da25a6-0883-4830-b6a1-0feb785c3952)
+
 ## 3.3. Installation de Wazuh sur Ubuntu
 https://www.youtube.com/watch?v=aCznKXn3KuQ&t=263s
 # 4. Création des fichiers nécessaires
