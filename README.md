@@ -55,8 +55,8 @@ Commandes pour vérifier si tous les conteneurs sont démarrés correctement (do
 
 ![image](https://github.com/user-attachments/assets/dd4185d6-6f14-4993-b6dd-c96534d5901b)
 
-# 5. Intégration entre Cortex, MISP et The Hive
-## 5.1. Intégration entre The Hive et Cortex
+# 6. Intégration entre Cortex, MISP et The Hive
+## 6.1. Intégration entre The Hive et Cortex
 The Hive utilise Cortex comme moteur d’analyse pour automatiser les tâches et enrichir les alertes.
 ### Étape 1 : Récupération de la clé API Cortex
 creation d'un organisation SOC 
@@ -71,7 +71,7 @@ Créez un utilisateur et Générez une clé API.
 
 ![image](https://github.com/user-attachments/assets/3b820a35-d48e-476e-8fab-3292062f55eb)
 
-## 5.2. Intégration entre The Hive et MISP
+## 6.2. Intégration entre The Hive et MISP
 MISP fournit des données d’intelligence (indicateurs, menaces) que The Hive peut consommer pour enrichir les investigations.
 ### Étape 1 : Configuration de MISP dans The Hive
 Générez une clé API MISP via Administration → Liste des utilisateurs → API Keys.
@@ -90,7 +90,7 @@ integration effectué:
 
 ![image](https://github.com/user-attachments/assets/279c3864-6339-451f-8d2d-d59b0d0fec2f)
 
-### # Étape 4 : Configuration de Wazuh dans The Hive
+## 6.3 integration entre wazuh et the Hive
 #### Création du script d'intégration personnalisé
 Créez un script Python nommé custom-w2thive.py 
 
