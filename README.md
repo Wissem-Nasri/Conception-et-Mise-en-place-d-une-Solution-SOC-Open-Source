@@ -55,7 +55,7 @@ The Hive utilise Cortex comme moteur d’analyse pour automatiser les tâches et
 creation d'un organisation SOC 
 ![image](https://github.com/user-attachments/assets/fc42a4b8-ce8a-4ff4-8ade-d51a23748bc8)
 Créez un utilisateur et Générez une clé API.
-![image](https://github.com/user-attachments/assets/d8b3fcc0-1d71-4ee7-93fb-192a01a5b566)
+![image](https://github.com/user-attachments/assets/fbfd8653-c13b-4488-b5e4-a123b9e31803)
 ### Étape 2 : Configuration dans The Hive
 ![image](https://github.com/user-attachments/assets/5842ab86-b615-46b8-a4fe-db17a845f814)
 ## 5.2. Intégration entre The Hive et MISP
