@@ -24,9 +24,19 @@ Emplacement et contenu des fichiers de configuration nécessaires (exemple : app
 
 ![image](https://github.com/user-attachments/assets/d6d472f7-c174-44e1-808d-ea85bf166b65)
 
+![image](https://github.com/user-attachments/assets/518e9dfb-1350-44c4-9319-19af0b38d3dd)
+
+
 # 5. Lancement des services
 ## 5.1. Commande de démarrage
 Utilisation de la commande docker-compose up -d pour lancer les conteneurs.
+
+![image](https://github.com/user-attachments/assets/fa89a69f-b6eb-4f97-88a3-69aeca27ae6e)
+
+
 ## 5.2. Vérification de l'état des services
 Commandes pour vérifier si tous les conteneurs sont démarrés correctement (docker ps).
+
+![image](https://github.com/user-attachments/assets/dd4185d6-6f14-4993-b6dd-c96534d5901b)
+
 
