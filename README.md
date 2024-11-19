@@ -89,7 +89,7 @@ integration effectué:
 
 ![image](https://github.com/user-attachments/assets/279c3864-6339-451f-8d2d-d59b0d0fec2f)
 
-### # Étape 1 : Configuration de Wazuh dans The Hive
+### # Étape 4 : Configuration de Wazuh dans The Hive
 #### Création du script d'intégration personnalisé
 Créez un script Python nommé custom-w2thive.py 
 
