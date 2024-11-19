@@ -19,6 +19,14 @@ Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
 ![image](https://github.com/user-attachments/assets/b2da25a6-0883-4830-b6a1-0feb785c3952)
 
 ## 3.3. Installation de Wazuh sur Ubuntu
+### Préparation du système en mettant à jour les paquets avec apt update et apt upgrade.
+sudo apt update && sudo apt upgrade
+###  Installer curl .
+sudo apt install curl
+### Télécharger le script d'installation de Wazuh.
+curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+### Exécuter le script d'installation.
+sudo bash ./wazuh-install.sh -a
 https://www.youtube.com/watch?v=aCznKXn3KuQ&t=263s
 # 4. Création des fichiers nécessaires
 ## 4.1. Configuration de Docker Compose
