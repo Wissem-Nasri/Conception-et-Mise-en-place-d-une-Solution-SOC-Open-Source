@@ -8,20 +8,22 @@ Ubuntu 22.04 .
 
 ## 2.2. Outils nécessaires
 Docker et Docker Compose installés pour les services SOC.
+Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
+
+![image](https://github.com/user-attachments/assets/9891b488-93cb-498f-b825-9734787bc634)
+
+# 3. Installation des dépendances
 
 ![image](https://github.com/user-attachments/assets/b5bdd3ae-1261-4f62-a8d5-971a2025459b)
 
-Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
-# 3. Installation des dépendances
-## 3.1. Installation de Docker
-Commandes pour installer Docker sur Ubuntu.
-## 3.2. Installation de Docker Compose
-Commandes pour installer Docker Compose version 3.7 ou plus récent.
 # 4. Création des fichiers nécessaires
 ## 4.1. Configuration de Docker Compose
 Contenu détaillé du fichier docker-compose.yml (voir la configuration ci-dessus).
 ## 4.2. Configuration des fichiers de The Hive et Cortex
 Emplacement et contenu des fichiers de configuration nécessaires (exemple : application.conf).
+
+![image](https://github.com/user-attachments/assets/d6d472f7-c174-44e1-808d-ea85bf166b65)
+
 # 5. Lancement des services
 ## 5.1. Commande de démarrage
 Utilisation de la commande docker-compose up -d pour lancer les conteneurs.
