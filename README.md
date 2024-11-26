@@ -1,6 +1,6 @@
 # 1. Introduction
 Présentation du projet et des outils inclus dans l'architecture SOC : The Hive, Cortex, MISP, et Wazuh.
-![image-soc (2) (1)](https://github.com/user-attachments/assets/c1b914ea-1491-49ab-b7d1-2a7757c66874)
+![Untitled Diagram (22)](https://github.com/user-attachments/assets/69a3b2ee-7272-418a-96fa-0b25739fb489)
 # 2. Pré-requis
 ## 2.1. Système d'exploitation
 Ubuntu 22.04 .
