@@ -1,0 +1,4 @@
+[2024-11-08 00:10:51] main.INFO: *** Starting scheduler worker ee1cb2c2759a:337:_schdlr_ {"type":"start","worker":"ee1cb2c2759a:337","queues":["_schdlr_"]} []
+[2024-11-08 00:10:51] main.INFO: Starting worker ee1cb2c2759a:337:_schdlr_ {"type":"start","worker":"ee1cb2c2759a:337:_schdlr_"} []
+[2024-11-08 00:21:58] main.INFO: *** Starting scheduler worker 6e18bcebb198:625:_schdlr_ {"type":"start","worker":"6e18bcebb198:625","queues":["_schdlr_"]} []
+[2024-11-08 00:21:58] main.INFO: Starting worker 6e18bcebb198:625:_schdlr_ {"type":"start","worker":"6e18bcebb198:625:_schdlr_"} []

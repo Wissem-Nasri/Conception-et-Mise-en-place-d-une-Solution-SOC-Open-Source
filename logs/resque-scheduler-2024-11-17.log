@@ -1,0 +1,5 @@
+[2024-11-17 13:53:36] main.INFO: *** Starting scheduler worker f094c4a30ccf:559:_schdlr_ {"type":"start","worker":"f094c4a30ccf:559","queues":["_schdlr_"]} []
+[2024-11-17 13:53:36] main.INFO: Starting worker f094c4a30ccf:559:_schdlr_ {"type":"start","worker":"f094c4a30ccf:559:_schdlr_"} []
+[2024-11-17 14:53:37] main.INFO: Exiting... {"type":"shutdown","worker":"f094c4a30ccf:559"} []
+[2024-11-17 14:53:39] main.INFO: *** Starting scheduler worker f094c4a30ccf:768:_schdlr_ {"type":"start","worker":"f094c4a30ccf:768","queues":["_schdlr_"]} []
+[2024-11-17 14:53:39] main.INFO: Starting worker f094c4a30ccf:768:_schdlr_ {"type":"start","worker":"f094c4a30ccf:768:_schdlr_"} []

@@ -1,0 +1,790 @@
+<stix:STIX_Package xmlns:cyboxCommon="http://cybox.mitre.org/common-2" xmlns:cybox="http://cybox.mitre.org/cybox-2" xmlns:cyboxVocabs="http://cybox.mitre.org/default_vocabularies-2" xmlns:FileObj="http://cybox.mitre.org/objects#FileObject-2" xmlns:WinExecutableFileObj="http://cybox.mitre.org/objects#WinExecutableFileObject-2" xmlns:WinFileObj="http://cybox.mitre.org/objects#WinFileObject-2" xmlns:marking="http://data-marking.mitre.org/Marking-1" xmlns:tlpMarking="http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1" xmlns:TOUMarking="http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1" xmlns:maecBundle="http://maec.mitre.org/XMLSchema/maec-bundle-4" xmlns:maecPackage="http://maec.mitre.org/XMLSchema/maec-package-2" xmlns:maecVocabs="http://maec.mitre.org/default_vocabularies-1" xmlns:incident="http://stix.mitre.org/Incident-1" xmlns:indicator="http://stix.mitre.org/Indicator-2" xmlns:ttp="http://stix.mitre.org/TTP-1" xmlns:stixCommon="http://stix.mitre.org/common-1" xmlns:stixVocabs="http://stix.mitre.org/default_vocabularies-1" xmlns:stix-maec="http://stix.mitre.org/extensions/Malware#MAEC4.1-1" xmlns:stix="http://stix.mitre.org/stix-1" xmlns:NCCIC="http://www.us-cert.gov/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="  http://cybox.mitre.org/common-2 http://cybox.mitre.org/XMLSchema/common/2.1/cybox_common.xsd  http://cybox.mitre.org/cybox-2 http://cybox.mitre.org/XMLSchema/core/2.1/cybox_core.xsd  http://cybox.mitre.org/default_vocabularies-2 http://cybox.mitre.org/XMLSchema/default_vocabularies/2.1/cybox_default_vocabularies.xsd  http://cybox.mitre.org/objects#FileObject-2 http://cybox.mitre.org/XMLSchema/objects/File/2.1/File_Object.xsd  http://cybox.mitre.org/objects#WinExecutableFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_Executable_File/2.1/Win_Executable_File_Object.xsd  http://cybox.mitre.org/objects#WinFileObject-2 http://cybox.mitre.org/XMLSchema/objects/Win_File/2.1/Win_File_Object.xsd  http://data-marking.mitre.org/Marking-1 http://stix.mitre.org/XMLSchema/data_marking/1.1.1/data_marking.xsd  http://data-marking.mitre.org/extensions/MarkingStructure#TLP-1 http://stix.mitre.org/XMLSchema/extensions/marking/tlp/1.1.1/tlp_marking.xsd  http://data-marking.mitre.org/extensions/MarkingStructure#Terms_Of_Use-1 http://stix.mitre.org/XMLSchema/extensions/marking/terms_of_use/1.0.1/terms_of_use_marking.xsd  http://maec.mitre.org/XMLSchema/maec-bundle-4 http://maec.mitre.org/language/version4.1/maec_bundle_schema.xsd  http://maec.mitre.org/XMLSchema/maec-package-2 http://maec.mitre.org/language/version4.1/maec_package_schema.xsd  http://maec.mitre.org/default_vocabularies-1 http://maec.mitre.org/language/version4.1/maec_default_vocabularies.xsd  http://stix.mitre.org/Incident-1 http://stix.mitre.org/XMLSchema/incident/1.1.1/incident.xsd  http://stix.mitre.org/Indicator-2 http://stix.mitre.org/XMLSchema/indicator/2.1.1/indicator.xsd  http://stix.mitre.org/TTP-1 http://stix.mitre.org/XMLSchema/ttp/1.1.1/ttp.xsd  http://stix.mitre.org/common-1 http://stix.mitre.org/XMLSchema/common/1.1.1/stix_common.xsd  http://stix.mitre.org/default_vocabularies-1 http://stix.mitre.org/XMLSchema/default_vocabularies/1.1.1/stix_default_vocabularies.xsd  http://stix.mitre.org/extensions/Malware#MAEC4.1-1 http://stix.mitre.org/XMLSchema/extensions/malware/maec_4.1/1.0.1/maec_4.1_malware.xsd  http://stix.mitre.org/stix-1 http://stix.mitre.org/XMLSchema/core/1.1.1/stix_core.xsd" id="NCCIC:Package-6428f63c-0816-45be-b147-4d04ed5fbcf9" version="1.1.1" timestamp="2018-11-27T14:02:21-05:00">
+    <stix:STIX_Header>
+        <stix:Title>MAR-10164494.r1.v1</stix:Title>
+        <stix:Package_Intent>Malware Characterization</stix:Package_Intent>
+        <stix:Handling>
+            <marking:Marking>
+                <marking:Controlled_Structure>//node() | //@*</marking:Controlled_Structure>
+                <marking:Marking_Structure xsi:type="tlpMarking:TLPMarkingStructureType" color="WHITE"/>
+                <marking:Marking_Structure xsi:type="TOUMarking:TermsOfUseMarkingStructureType">
+                    <TOUMarking:Terms_Of_Use>This document is marked TLP:WHITE. Disclosure is not limited. Sources may use TLP:WHITE when information carries minimal or no foreseeable risk of misuse, in accordance with applicable rules and procedures for public release. Subject to standard copyright rules, TLP:WHITE information may be distributed without restriction. For more information on the Traffic Light Protocol, see http://www.us-cert.gov/tlp.</TOUMarking:Terms_Of_Use>
+                </marking:Marking_Structure>
+            </marking:Marking>
+        </stix:Handling>
+        <stix:Information_Source>
+            <stixCommon:Identity>
+                <stixCommon:Name>US-CERT</stixCommon:Name>
+            </stixCommon:Identity>
+            <stixCommon:Time>
+                <cyboxCommon:Produced_Time>2018-11-27T14:02:21-05:00</cyboxCommon:Produced_Time>
+            </stixCommon:Time>
+            <stixCommon:Tools>
+                <cyboxCommon:Tool>
+                    <cyboxCommon:Name>BMachine</cyboxCommon:Name>
+                    <cyboxCommon:Description>89</cyboxCommon:Description>
+                    <cyboxCommon:Version>7.1.0</cyboxCommon:Version>
+                </cyboxCommon:Tool>
+            </stixCommon:Tools>
+        </stix:Information_Source>
+    </stix:STIX_Header>
+    <stix:Observables cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+        <cybox:Observable id="NCCIC:Observable-4628c519-34b4-4ceb-9dfa-bd0a712d5970">
+            <cybox:Description><![CDATA[This file is a .NET Class Library module designed to decrypt the encrypted data file with a ".stubbin” extension using a Rijndael encryption algorithm.
+
+Displayed below is the encryption key and the initialization vector used for decryption. 
+
+--Begin encryption information--
+rijndael.Key = hdfgkhioiugyfyghdseertdfygu
+rijndael.IV = ghtrfdfdewsdfgtyhgjgghfdg
+--End encryption information--]]></cybox:Description>
+            <cybox:Object id="NCCIC:WinExecutableFile-eaf7e1bc-5f82-425b-91b0-c16bb3cf7913">
+                <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                    <FileObj:File_Name>ClassLibrary1.dll</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>5120</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>PE32 executable (DLL) (console) Intel 80386 Mono/.Net assembly, for MS Windows</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>76bd79f774ae892fd6a30b6463050a91</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>4d7a60bd1fb3677a553f26d95430c107c8485129</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>9b23bfc35b18ed80104c496b2aa722b3e56ff9ceb9dae60d1aff7230321c1d12</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>67e0046db0b565a1ac1862bbd536016c3ea984f8fceadaa31b4c99e7a8b434b170d5badbb10c2c25e264b17bbf2f97576f252e7ef74279b3b845b1553cef9829</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>48:6DhamfhRd4tvDo4Xbgj/aarU3LT88VMM8UX8i02+KfANbU7gjBRd1trWO8lGO+3L:m+5DoAbgfU88Spi0oANbsgjMPYp3XII</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>4.004964</FileObj:Peak_Entropy>
+                    <WinExecutableFileObj:Headers>
+                        <WinExecutableFileObj:File_Header>
+                            <WinExecutableFileObj:Number_Of_Sections>4</WinExecutableFileObj:Number_Of_Sections>
+                            <WinExecutableFileObj:Time_Date_Stamp>2018-01-28 06:09:15-05:00</WinExecutableFileObj:Time_Date_Stamp>
+                            <WinExecutableFileObj:Size_Of_Optional_Header>512</WinExecutableFileObj:Size_Of_Optional_Header>
+                            <WinExecutableFileObj:Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>34943f18fd2a99cc3f5cabe43b4765f8</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Hashes>
+                        </WinExecutableFileObj:File_Header>
+                        <WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Value>2.54792</WinExecutableFileObj:Value>
+                        </WinExecutableFileObj:Entropy>
+                    </WinExecutableFileObj:Headers>
+                    <WinExecutableFileObj:Resources>
+                        <WinExecutableFileObj:VersionInfoResource>
+                            <WinExecutableFileObj:CompanyName/>
+                            <WinExecutableFileObj:FileDescription>ClassLibrary1</WinExecutableFileObj:FileDescription>
+                            <WinExecutableFileObj:FileVersion>1.0.0.0</WinExecutableFileObj:FileVersion>
+                            <WinExecutableFileObj:InternalName>ClassLibrary1.dll</WinExecutableFileObj:InternalName>
+                            <WinExecutableFileObj:LegalCopyright>Copyright ©  2018</WinExecutableFileObj:LegalCopyright>
+                            <WinExecutableFileObj:OriginalFilename>ClassLibrary1.dll</WinExecutableFileObj:OriginalFilename>
+                            <WinExecutableFileObj:ProductName>ClassLibrary1</WinExecutableFileObj:ProductName>
+                            <WinExecutableFileObj:ProductVersion>1.0.0.0</WinExecutableFileObj:ProductVersion>
+                        </WinExecutableFileObj:VersionInfoResource>
+                    </WinExecutableFileObj:Resources>
+                    <WinExecutableFileObj:Sections>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.text</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>3072</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>4.85667</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>06219fe6e30e15dce12688ca2b434890</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.rsrc</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>1024</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>2.888335</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>11b58fc9ac45168b871cc50399b7c86c</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.reloc</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>512</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>0.081539</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>ec45a535f38fb6dc4ac4ed7cbf63b754</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                    </WinExecutableFileObj:Sections>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-e62ee2f1-2155-4c9e-ad06-d79ff97f6899">
+            <cybox:Description><![CDATA[This file is a PE32 .NET executable designed to search and load an encrypted data file with a ".stubbin" extension onto the victim's system. If the file exists, it will utilize the Rijndael algorithm in the Class Library file (ClassLibrary1.dll) to decrypt the data file. After decryption, the file deletes the encrypted data file. The encrypted file with a ".stubbin" extension was not available for analysis.]]></cybox:Description>
+            <cybox:Object id="NCCIC:WinExecutableFile-2d2d53cf-43da-42fa-81c2-e10aec13b33a">
+                <cybox:Properties xsi:type="WinExecutableFileObj:WindowsExecutableFileObjectType">
+                    <FileObj:File_Name>mswinupdate.exe</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>6144</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS Windows</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>b96620d8a08fa436ea22ef480dd883ce</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>a1ab74d2f06a542e77ea2c6d641aae4ed163a2da</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>738c95f5bfe63a530b200a0d73f363d46c5671c1fcbb69c217e15a3516501a86</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>2a9f4ebb025c8e7b4e074d301477656ffad66318da5ea35ddc8363c17f4bdbf501778539133261adbb9f441066a1e2b79240306ad1877f5ef17009c8f05ff4a6</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>48:6ZMMEikGAgS7zfMFmZUX7OLbqMMou6ZVqsPIUlf41cjGPRMfNFrbvZiJY527qnfF:/ikGAgS7b0807M+And6c6mBiJYPezNt</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Packer_List>
+                        <FileObj:Packer>
+                            <FileObj:Name>Microsoft Visual C# v7.0 / Basic .NET</FileObj:Name>
+                        </FileObj:Packer>
+                    </FileObj:Packer_List>
+                    <FileObj:Peak_Entropy>4.238961</FileObj:Peak_Entropy>
+                    <WinExecutableFileObj:Headers>
+                        <WinExecutableFileObj:File_Header>
+                            <WinExecutableFileObj:Number_Of_Sections>4</WinExecutableFileObj:Number_Of_Sections>
+                            <WinExecutableFileObj:Time_Date_Stamp>2018-01-28 06:09:17-05:00</WinExecutableFileObj:Time_Date_Stamp>
+                            <WinExecutableFileObj:Size_Of_Optional_Header>512</WinExecutableFileObj:Size_Of_Optional_Header>
+                            <WinExecutableFileObj:Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>7f1dc4bd716bc037dea251c4dff12cdd</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Hashes>
+                        </WinExecutableFileObj:File_Header>
+                        <WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Value>2.538579</WinExecutableFileObj:Value>
+                        </WinExecutableFileObj:Entropy>
+                    </WinExecutableFileObj:Headers>
+                    <WinExecutableFileObj:Resources>
+                        <WinExecutableFileObj:VersionInfoResource>
+                            <WinExecutableFileObj:CompanyName>oiauoyqtfhqiwur578q26trgqiwue ffh iufiuqwytf 78wt8</WinExecutableFileObj:CompanyName>
+                            <WinExecutableFileObj:FileDescription>dkhjkasyfafa  udfiu asd fuiysfd fiusdfh oiafiuay</WinExecutableFileObj:FileDescription>
+                            <WinExecutableFileObj:FileVersion>76.7.99.12</WinExecutableFileObj:FileVersion>
+                            <WinExecutableFileObj:InternalName>rock2.exe</WinExecutableFileObj:InternalName>
+                            <WinExecutableFileObj:LegalCopyright>iusy ergy8wej udg uy</WinExecutableFileObj:LegalCopyright>
+                            <WinExecutableFileObj:OriginalFilename>rock2.exe</WinExecutableFileObj:OriginalFilename>
+                            <WinExecutableFileObj:ProductName>98y4798t qiy er998ergg iuery 8 o8uieyfui qewhfiuoyafibuwy ey7fq iuyi</WinExecutableFileObj:ProductName>
+                            <WinExecutableFileObj:ProductVersion>76.7.99.12</WinExecutableFileObj:ProductVersion>
+                        </WinExecutableFileObj:VersionInfoResource>
+                    </WinExecutableFileObj:Resources>
+                    <WinExecutableFileObj:Sections>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.text</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>3072</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>4.946272</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>c8076584486a2745281e4945da9b8b13</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.rsrc</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>2048</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>3.917395</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>1efe88aa4756d059ec1d3b49e342de5d</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                        <WinExecutableFileObj:Section>
+                            <WinExecutableFileObj:Section_Header>
+                                <WinExecutableFileObj:Name>.reloc</WinExecutableFileObj:Name>
+                                <WinExecutableFileObj:Size_Of_Raw_Data>512</WinExecutableFileObj:Size_Of_Raw_Data>
+                            </WinExecutableFileObj:Section_Header>
+                            <WinExecutableFileObj:Entropy>
+                                <WinExecutableFileObj:Value>0.081539</WinExecutableFileObj:Value>
+                            </WinExecutableFileObj:Entropy>
+                            <WinExecutableFileObj:Header_Hashes>
+                                <cyboxCommon:Hash>
+                                    <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                    <cyboxCommon:Simple_Hash_Value>7048daac38c935b38e086adcd8035d2a</cyboxCommon:Simple_Hash_Value>
+                                </cyboxCommon:Hash>
+                            </WinExecutableFileObj:Header_Hashes>
+                        </WinExecutableFileObj:Section>
+                    </WinExecutableFileObj:Sections>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+        <cybox:Observable id="NCCIC:Observable-8b1e472f-edbc-4e9c-be0f-2550c53f4e52">
+            <cybox:Description><![CDATA[This file is a batch file designed to execute mswinupdate.exe with predefined arguments. Displayed below are the arguments:
+
+--Begin arguments--
+Format: %myrunner% %password% %path% %totalprice% %priceperhost%
+Sample: mswinupdate.exe <password> juxtapositional 5 0.8
+--End arguments--]]></cybox:Description>
+            <cybox:Object id="NCCIC:File-a4420cf2-b1ec-4dde-9895-0935df731c95">
+                <cybox:Properties xsi:type="FileObj:FileObjectType">
+                    <FileObj:File_Name>g04inst.bat</FileObj:File_Name>
+                    <FileObj:Size_In_Bytes>276</FileObj:Size_In_Bytes>
+                    <FileObj:File_Format>ASCII text, with CRLF line terminators</FileObj:File_Format>
+                    <FileObj:Hashes>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>02c19bbf8e19bb69fc7870ec872d355e</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>cc76586ef94122329e825c78aad2ecb9ac064343</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>bbd4102fe25e73c0815d0c020d60d47dbbfbe79ef1e490e7b4f97640dd932b58</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA512</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>283681b5b8e78440bf474c8e50504e6e82f25bd3f6240d5e70600e43fc9fd609a78ee7b837c9b68aa25ed13f2ee735f360a18e614ded15e11bb62043cd028c99</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                        <cyboxCommon:Hash>
+                            <cyboxCommon:Type xsi:type="cyboxVocabs:HashNameVocab-1.0">SSDEEP</cyboxCommon:Type>
+                            <cyboxCommon:Simple_Hash_Value>6:JF1ZzA+QragXsoNLYjClAVyXHI+CIwZALICLA9XEUXR/JgW:L1J4aSJF+dyXo+Bb0LEUhyW</cyboxCommon:Simple_Hash_Value>
+                        </cyboxCommon:Hash>
+                    </FileObj:Hashes>
+                    <FileObj:Peak_Entropy>4.962735</FileObj:Peak_Entropy>
+                </cybox:Properties>
+            </cybox:Object>
+        </cybox:Observable>
+    </stix:Observables>
+    <stix:Indicators>
+        <stix:Indicator id="NCCIC:indicator-c51bbf97-e058-4f02-9e42-9d1b3624c7c2" timestamp="2018-11-28T14:05:23.895520+00:00" xsi:type="indicator:IndicatorType">
+            <indicator:Title>MD5 and SHA1 of Malicious File</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-af491c80-93a7-4831-aa95-d91d413ec58d">
+                <cybox:Object id="NCCIC:File-7f58ce95-cc60-466d-b405-d47226c5f0bf">
+                    <cybox:Properties xsi:type="FileObj:FileObjectType">
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">76bd79f774ae892fd6a30b6463050a91</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">4d7a60bd1fb3677a553f26d95430c107c8485129</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">9b23bfc35b18ed80104c496b2aa722b3e56ff9ceb9dae60d1aff7230321c1d12</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-5d0f936e-b6ce-4857-b3b4-dfefae59f4b9" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-dd748085-41fc-4293-981c-de026f3e53ef" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-e2eb7410-a608-48ab-8213-370ca3ff529c" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-bb2fce0e-f531-405f-a379-6aa94cbbe012" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>NCCIC</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2018-11-28T14:05:23+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-de22aa28-dd06-4c34-91e4-d3fdc93742b2" timestamp="2018-11-28T14:05:23.978699+00:00" xsi:type="indicator:IndicatorType">
+            <indicator:Title>MD5 and SHA1 of Malicious File</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-d8c518dc-e5cd-4d43-849b-becaddc05cc2">
+                <cybox:Object id="NCCIC:File-bd1dbb31-d316-4911-b2cb-4e71d16d1dbb">
+                    <cybox:Properties xsi:type="FileObj:FileObjectType">
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">b96620d8a08fa436ea22ef480dd883ce</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">a1ab74d2f06a542e77ea2c6d641aae4ed163a2da</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">738c95f5bfe63a530b200a0d73f363d46c5671c1fcbb69c217e15a3516501a86</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-eff2d9f2-69e5-4499-8e6d-86d6ed481ac0" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-e2eb7410-a608-48ab-8213-370ca3ff529c" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-bb2fce0e-f531-405f-a379-6aa94cbbe012" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>NCCIC</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2018-11-28T14:05:23+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+        <stix:Indicator id="NCCIC:indicator-4db7c94f-d524-4974-b449-25f0ae437a0e" timestamp="2018-11-28T14:05:24.055787+00:00" xsi:type="indicator:IndicatorType">
+            <indicator:Title>MD5 and SHA1 of Malicious File</indicator:Title>
+            <indicator:Type>Malware Artifacts</indicator:Type>
+            <indicator:Observable id="NCCIC:Observable-24973c65-3e27-4f1e-944e-0fee5d9c4ec4">
+                <cybox:Object id="NCCIC:File-a7364364-e48d-4a7c-b3bd-ece622f7f31e">
+                    <cybox:Properties xsi:type="FileObj:FileObjectType">
+                        <FileObj:Hashes>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">MD5</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">02c19bbf8e19bb69fc7870ec872d355e</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA1</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">cc76586ef94122329e825c78aad2ecb9ac064343</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                            <cyboxCommon:Hash>
+                                <cyboxCommon:Type condition="Equals" xsi:type="cyboxVocabs:HashNameVocab-1.0">SHA256</cyboxCommon:Type>
+                                <cyboxCommon:Simple_Hash_Value condition="Equals">bbd4102fe25e73c0815d0c020d60d47dbbfbe79ef1e490e7b4f97640dd932b58</cyboxCommon:Simple_Hash_Value>
+                            </cyboxCommon:Hash>
+                        </FileObj:Hashes>
+                    </cybox:Properties>
+                </cybox:Object>
+            </indicator:Observable>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-2ed51600-ddd2-4d0f-a6f1-b3743ae0f953" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-e2eb7410-a608-48ab-8213-370ca3ff529c" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Indicated_TTP>
+                <stixCommon:TTP idref="NCCIC:ttp-bb2fce0e-f531-405f-a379-6aa94cbbe012" xsi:type="ttp:TTPType"/>
+            </indicator:Indicated_TTP>
+            <indicator:Producer>
+                <stixCommon:Identity>
+                    <stixCommon:Name>NCCIC</stixCommon:Name>
+                </stixCommon:Identity>
+                <stixCommon:Time>
+                    <cyboxCommon:Produced_Time>2018-11-28T14:05:24+00:00</cyboxCommon:Produced_Time>
+                </stixCommon:Time>
+            </indicator:Producer>
+        </stix:Indicator>
+    </stix:Indicators>
+    <stix:TTPs>
+        <stix:TTP id="NCCIC:ttp-5d0f936e-b6ce-4857-b3b4-dfefae59f4b9" timestamp="2018-11-28T14:05:23.894229+00:00" xsi:type="ttp:TTPType">
+            <ttp:Title>MAEC Characterization of 76bd79f774ae892fd6a30b6463050a91</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type="stix-maec:MAEC4.1InstanceType">
+                        <stix-maec:MAEC id="NCCIC:package-4fc66f1e-fef3-4185-aac6-3f2d78fd9829" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-56f50215-073b-47aa-85bb-a1ae982e90d2">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:WinExecutableFile-eaf7e1bc-5f82-425b-91b0-c16bb3cf7913"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-77cb18c2-c970-40a1-8b57-4d19ed34bbe8" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>ClamAV</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Win.Trojan.Agent-6538241-0</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Ransomware-GJY!76BD79F774AE</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>K7</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Riskware ( 0040eff71 )</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Systweak</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>trojan.downloader</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Cyren</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W32/Trojan.URRI-3517</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Symantec</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Gen.2</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Antiy</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan/Win32.AGeneric</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>BitDefender</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.30369417</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Ransom:MSIL/Samas.D</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/Samas-F</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro House Call</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TROJ_STUBDCRYP.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TROJ_STUBDCRYP.A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Emsisoft</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.30369417 (B)</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ahnlab</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan/Win32.Black</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>ESET</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>a variant of MSIL/Runner.N trojan</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>NANOAV</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Win32.Runner.ffvfbl</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ikarus</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Ransom.MSIL.Samas</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+            <ttp:Resources>
+                <ttp:Infrastructure>
+                    <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+                        <cybox:Observable idref="NCCIC:Observable-4628c519-34b4-4ceb-9dfa-bd0a712d5970">
+                        </cybox:Observable>
+                    </ttp:Observable_Characterization>
+                </ttp:Infrastructure>
+            </ttp:Resources>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-dd748085-41fc-4293-981c-de026f3e53ef" timestamp="2018-11-28T14:05:23.914801+00:00" xsi:type="ttp:TTPType">
+            <ttp:Title>downloader</ttp:Title>
+            <ttp:Resources>
+                <ttp:Infrastructure>
+                    <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+                        <cybox:Observable idref="NCCIC:Observable-4628c519-34b4-4ceb-9dfa-bd0a712d5970">
+                        </cybox:Observable>
+                    </ttp:Observable_Characterization>
+                </ttp:Infrastructure>
+            </ttp:Resources>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-e2eb7410-a608-48ab-8213-370ca3ff529c" timestamp="2018-11-28T14:05:23.915331+00:00" xsi:type="ttp:TTPType">
+            <ttp:Title>ransomware</ttp:Title>
+            <ttp:Resources>
+                <ttp:Infrastructure>
+                    <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+                        <cybox:Observable idref="NCCIC:Observable-4628c519-34b4-4ceb-9dfa-bd0a712d5970">
+                        </cybox:Observable>
+                        <cybox:Observable idref="NCCIC:Observable-e62ee2f1-2155-4c9e-ad06-d79ff97f6899">
+                        </cybox:Observable>
+                        <cybox:Observable idref="NCCIC:Observable-8b1e472f-edbc-4e9c-be0f-2550c53f4e52">
+                        </cybox:Observable>
+                    </ttp:Observable_Characterization>
+                </ttp:Infrastructure>
+            </ttp:Resources>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-bb2fce0e-f531-405f-a379-6aa94cbbe012" timestamp="2018-11-28T14:05:23.915827+00:00" xsi:type="ttp:TTPType">
+            <ttp:Title>trojan</ttp:Title>
+            <ttp:Resources>
+                <ttp:Infrastructure>
+                    <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+                        <cybox:Observable idref="NCCIC:Observable-4628c519-34b4-4ceb-9dfa-bd0a712d5970">
+                        </cybox:Observable>
+                        <cybox:Observable idref="NCCIC:Observable-e62ee2f1-2155-4c9e-ad06-d79ff97f6899">
+                        </cybox:Observable>
+                        <cybox:Observable idref="NCCIC:Observable-8b1e472f-edbc-4e9c-be0f-2550c53f4e52">
+                        </cybox:Observable>
+                    </ttp:Observable_Characterization>
+                </ttp:Infrastructure>
+            </ttp:Resources>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-eff2d9f2-69e5-4499-8e6d-86d6ed481ac0" timestamp="2018-11-28T14:05:23.977652+00:00" xsi:type="ttp:TTPType">
+            <ttp:Title>MAEC Characterization of b96620d8a08fa436ea22ef480dd883ce</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type="stix-maec:MAEC4.1InstanceType">
+                        <stix-maec:MAEC id="NCCIC:package-de70ceca-3954-4c9e-aa76-115ac5934ffd" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-6c77f007-9639-4503-b4bc-0324fa392a85">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:WinExecutableFile-2d2d53cf-43da-42fa-81c2-e10aec13b33a"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-c72e4f36-d410-46bb-a6ee-d5f63824a1e5" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Ransomware-GJX!B96620D8A08F</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>NetGate</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Malware.Generic</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>K7</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Riskware ( 0040eff71 )</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Systweak</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>malware.shuriken</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Cyren</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>W32/Trojan.VYAP-2611</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Symantec</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Gen.2</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Zillya!</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Samas.Win32.32</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Antiy</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan[Ransom]/MSIL.Samas</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>BitDefender</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.30367991</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Ransom:MSIL/Samas</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Mal/Kryptik-BV</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro House Call</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TROJ_RUNNER.GBB</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>TrendMicro</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TROJ_RUNNER.GBB</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Emsisoft</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.GenericKD.30367991 (B)</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Avira</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>TR/Samas.qybuh</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ahnlab</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan/Win32.Samas</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>ESET</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>a variant of MSIL/Runner.N trojan</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>NANOAV</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Win32.Generic.eymsce</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Ikarus</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Ransom.MSIL.Samas</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+            <ttp:Resources>
+                <ttp:Infrastructure>
+                    <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+                        <cybox:Observable idref="NCCIC:Observable-e62ee2f1-2155-4c9e-ad06-d79ff97f6899">
+                        </cybox:Observable>
+                    </ttp:Observable_Characterization>
+                </ttp:Infrastructure>
+            </ttp:Resources>
+        </stix:TTP>
+        <stix:TTP id="NCCIC:ttp-2ed51600-ddd2-4d0f-a6f1-b3743ae0f953" timestamp="2018-11-28T14:05:24.054966+00:00" xsi:type="ttp:TTPType">
+            <ttp:Title>MAEC Characterization of 02c19bbf8e19bb69fc7870ec872d355e</ttp:Title>
+            <ttp:Behavior>
+                <ttp:Malware>
+                    <ttp:Malware_Instance xsi:type="stix-maec:MAEC4.1InstanceType">
+                        <stix-maec:MAEC id="NCCIC:package-790d2775-8af0-4d55-91d6-8788b1e19773" schema_version="2.1">
+                            <maecPackage:Malware_Subjects>
+                                <maecPackage:Malware_Subject id="NCCIC:malware_subject-e8151452-b762-47d3-95a0-889ec8b37ddc">
+                                    <maecPackage:Malware_Instance_Object_Attributes idref="NCCIC:File-a4420cf2-b1ec-4dde-9895-0935df731c95"/>
+                                    <maecPackage:Findings_Bundles>
+                                        <maecPackage:Bundle defined_subject="true" id="NCCIC:bundle-1647ac6f-b247-4ee0-b8b2-60fa715eff4d" schema_version="4.1">
+                                            <maecBundle:AV_Classifications>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>McAfee</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>BAT/Starter.h</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Symantec</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Trojan.Malscript</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Microsoft Security Essentials</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Ransom:BAT/Samas</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                                <maecBundle:AV_Classification>
+                                                    <cyboxCommon:Vendor>Sophos</cyboxCommon:Vendor>
+                                                    <maecBundle:Classification_Name>Troj/RansRun-A</maecBundle:Classification_Name>
+                                                </maecBundle:AV_Classification>
+                                            </maecBundle:AV_Classifications>
+                                        </maecPackage:Bundle>
+                                    </maecPackage:Findings_Bundles>
+                                </maecPackage:Malware_Subject>
+                            </maecPackage:Malware_Subjects>
+                        </stix-maec:MAEC>
+                    </ttp:Malware_Instance>
+                </ttp:Malware>
+            </ttp:Behavior>
+            <ttp:Resources>
+                <ttp:Infrastructure>
+                    <ttp:Observable_Characterization cybox_major_version="2" cybox_minor_version="1" cybox_update_version="0">
+                        <cybox:Observable idref="NCCIC:Observable-8b1e472f-edbc-4e9c-be0f-2550c53f4e52">
+                        </cybox:Observable>
+                    </ttp:Observable_Characterization>
+                </ttp:Infrastructure>
+            </ttp:Resources>
+        </stix:TTP>
+    </stix:TTPs>
+    <stix:Incidents>
+        <stix:Incident id="NCCIC:incident-6150734a-9107-484c-8f63-357b50dac367" timestamp="2018-03-09T12:08:21-05:00" xsi:type="incident:IncidentType">
+            <incident:Title>10164494.r1.v1</incident:Title>
+            <incident:Description><![CDATA[##### Incident Summary #####
+
+None
+
+##### Report Summary #####
+
+Three artifacts were submitted for analysis.
+
+##### Conclusion #####
+
+None
+
+##### Mitigation #####
+
+None]]></incident:Description>
+            <incident:Categories>
+                <incident:Category xsi:type="stixVocabs:IncidentCategoryVocab-1.0">Malicious Code</incident:Category>
+            </incident:Categories>
+            <incident:Related_Indicators>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-c51bbf97-e058-4f02-9e42-9d1b3624c7c2" xsi:type="indicator:IndicatorType"/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-de22aa28-dd06-4c34-91e4-d3fdc93742b2" xsi:type="indicator:IndicatorType"/>
+                </incident:Related_Indicator>
+                <incident:Related_Indicator>
+                    <stixCommon:Indicator idref="NCCIC:indicator-4db7c94f-d524-4974-b449-25f0ae437a0e" xsi:type="indicator:IndicatorType"/>
+                </incident:Related_Indicator>
+            </incident:Related_Indicators>
+            <incident:Related_Observables>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-4628c519-34b4-4ceb-9dfa-bd0a712d5970">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-e62ee2f1-2155-4c9e-ad06-d79ff97f6899">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+                <incident:Related_Observable>
+                    <stixCommon:Relationship>Malicious Artifact Detected</stixCommon:Relationship>
+                    <stixCommon:Observable idref="NCCIC:Observable-8b1e472f-edbc-4e9c-be0f-2550c53f4e52">
+                    </stixCommon:Observable>
+                </incident:Related_Observable>
+            </incident:Related_Observables>
+            <incident:Leveraged_TTPs>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-5d0f936e-b6ce-4857-b3b4-dfefae59f4b9" xsi:type="ttp:TTPType"/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-dd748085-41fc-4293-981c-de026f3e53ef" xsi:type="ttp:TTPType"/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-e2eb7410-a608-48ab-8213-370ca3ff529c" xsi:type="ttp:TTPType"/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-bb2fce0e-f531-405f-a379-6aa94cbbe012" xsi:type="ttp:TTPType"/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-eff2d9f2-69e5-4499-8e6d-86d6ed481ac0" xsi:type="ttp:TTPType"/>
+                </incident:Leveraged_TTP>
+                <incident:Leveraged_TTP>
+                    <stixCommon:TTP idref="NCCIC:ttp-2ed51600-ddd2-4d0f-a6f1-b3743ae0f953" xsi:type="ttp:TTPType"/>
+                </incident:Leveraged_TTP>
+            </incident:Leveraged_TTPs>
+        </stix:Incident>
+    </stix:Incidents>
+</stix:STIX_Package>

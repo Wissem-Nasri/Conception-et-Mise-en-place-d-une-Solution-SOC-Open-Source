@@ -1,0 +1,4 @@
+[2024-11-04 23:19:38] main.INFO: *** Starting scheduler worker 7263ace3cd2f:796:_schdlr_ {"type":"start","worker":"7263ace3cd2f:796","queues":["_schdlr_"]} []
+[2024-11-04 23:19:38] main.INFO: Starting worker 7263ace3cd2f:796:_schdlr_ {"type":"start","worker":"7263ace3cd2f:796:_schdlr_"} []
+[2024-11-04 23:47:00] main.INFO: *** Starting scheduler worker 7263ace3cd2f:378:_schdlr_ {"type":"start","worker":"7263ace3cd2f:378","queues":["_schdlr_"]} []
+[2024-11-04 23:47:00] main.INFO: Starting worker 7263ace3cd2f:378:_schdlr_ {"type":"start","worker":"7263ace3cd2f:378:_schdlr_"} []

@@ -1,0 +1,3 @@
+[2024-12-28 00:28:25] main.INFO: Exiting... {"type":"shutdown","worker":"353c116bf981:974"} []
+[2024-12-28 00:28:28] main.INFO: *** Starting scheduler worker 353c116bf981:1182:_schdlr_ {"type":"start","worker":"353c116bf981:1182","queues":["_schdlr_"]} []
+[2024-12-28 00:28:28] main.INFO: Starting worker 353c116bf981:1182:_schdlr_ {"type":"start","worker":"353c116bf981:1182:_schdlr_"} []
