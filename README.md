@@ -114,3 +114,12 @@ Ce script servira à exécuter correctement le fichier Python custom-w2thive.py 
 
 En résumé, cette procédure permet d'intégrer Wazuh et The Hive afin que les alertes de sécurité soient automatiquement transmises à The Hive pour une gestion centralisée.
 
+# Projet terminé 🎉
+
+Le travail est désormais terminé ! 😊  
+Les traces de démonstration seront fournies très prochainement. Restez à l'affût pour plus de détails !
+
+## À venir
+- Fourniture des traces de démonstration.
+
+Merci pour votre patience et à bientôt !
