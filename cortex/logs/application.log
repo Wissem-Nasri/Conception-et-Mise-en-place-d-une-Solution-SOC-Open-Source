@@ -20708,3 +20708,9 @@ Caused by: java.net.ConnectException: Connection refused
 2024-12-28 01:02:10,154 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-12 - 172.18.0.3 GET /api/status took 7ms and returned 200 278 bytes
 2024-12-28 01:02:16,808 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-12 - 172.18.0.3 GET /api/status took 4ms and returned 200 278 bytes
 2024-12-28 01:02:16,998 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-14 - 172.18.0.3 GET /api/alert took 175ms and returned 200 2 bytes
+2024-12-28 01:03:10,198 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-12 - 172.18.0.3 GET /api/status took 4ms and returned 200 278 bytes
+2024-12-28 01:03:17,054 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-12 - 172.18.0.3 GET /api/status took 3ms and returned 200 278 bytes
+2024-12-28 01:03:17,287 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-7 - 172.18.0.3 GET /api/alert took 214ms and returned 200 2 bytes
+2024-12-28 01:04:10,263 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-14 - 172.18.0.3 GET /api/status took 16ms and returned 200 278 bytes
+2024-12-28 01:04:17,337 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-7 - 172.18.0.3 GET /api/status took 7ms and returned 200 278 bytes
+2024-12-28 01:04:17,797 [INFO] from org.thp.cortex.services.AccessLogFilter in application-akka.actor.default-dispatcher-11 - 172.18.0.3 GET /api/alert took 387ms and returned 200 2 bytes
