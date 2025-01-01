@@ -1,5 +1,6 @@
 # 1. Introduction
 Présentation du projet et des outils inclus dans l'architecture SOC : The Hive, Cortex, MISP, et Wazuh.
+![Untitled Diagram (22)](https://github.com/user-attachments/assets/69a3b2ee-7272-418a-96fa-0b25739fb489)
 # 2. Pré-requis
 ## 2.1. Système d'exploitation
 Ubuntu 22.04 .
@@ -8,6 +9,7 @@ Ubuntu 22.04 .
 
 ## 2.2. Outils nécessaires
 Docker et Docker Compose installés pour les services SOC.
+
 Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
 
 ![image](https://github.com/user-attachments/assets/9891b488-93cb-498f-b825-9734787bc634)
@@ -17,16 +19,20 @@ Accès administrateur à la machine Ubuntu pour l'installation de Wazuh.
 
 ![image](https://github.com/user-attachments/assets/b5bdd3ae-1261-4f62-a8d5-971a2025459b)
 
-## 3.3. Installation de Wazuh sur Ubuntu
+## 3.2. Installation de Wazuh sur Ubuntu
 ### Préparation du système en mettant à jour les paquets avec apt update et apt upgrade.
 sudo apt update && sudo apt upgrade
 ###  Installer curl .
 sudo apt install curl
 ### Télécharger le script d'installation de Wazuh.
-curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
+sudo curl -sO https://packages.wazuh.com/4.7/wazuh-install.sh
 ### Exécuter le script d'installation.
 sudo bash ./wazuh-install.sh -a
-https://www.youtube.com/watch?v=aCznKXn3KuQ&t=263s
+
+#### verification de fonctionnemennt
+
+![Capture d'écran 2024-11-19 152853](https://github.com/user-attachments/assets/ca35db49-5f77-4f48-9b93-600aab4f0e3c)
+
 # 4. Création des fichiers nécessaires
 ## 4.1. Configuration de Docker Compose
 Contenu détaillé du fichier docker-compose.yml (voir la configuration ci-dessus).
@@ -50,8 +56,8 @@ Commandes pour vérifier si tous les conteneurs sont démarrés correctement (do
 
 ![image](https://github.com/user-attachments/assets/dd4185d6-6f14-4993-b6dd-c96534d5901b)
 
-# 5. Intégration entre Cortex, MISP et The Hive
-## 5.1. Intégration entre The Hive et Cortex
+# 6. Intégration entre Cortex, MISP et The Hive
+## 6.1. Intégration entre The Hive et Cortex
 The Hive utilise Cortex comme moteur d’analyse pour automatiser les tâches et enrichir les alertes.
 ### Étape 1 : Récupération de la clé API Cortex
 creation d'un organisation SOC 
@@ -66,7 +72,7 @@ Créez un utilisateur et Générez une clé API.
 
 ![image](https://github.com/user-attachments/assets/3b820a35-d48e-476e-8fab-3292062f55eb)
 
-## 5.2. Intégration entre The Hive et MISP
+## 6.2. Intégration entre The Hive et MISP
 MISP fournit des données d’intelligence (indicateurs, menaces) que The Hive peut consommer pour enrichir les investigations.
 ### Étape 1 : Configuration de MISP dans The Hive
 Générez une clé API MISP via Administration → Liste des utilisateurs → API Keys.
@@ -81,11 +87,11 @@ integration effectué:
 
 ![image](https://github.com/user-attachments/assets/7bbb3874-8cca-4688-890c-778ee3ab55c3)
 
-### Étape 3: Configuration de MISP pour appeler Cortex
+## 6.3 Configuration des Analyseurs MISP dans Cortex pour l'Organisation SOC
 
-![image](https://github.com/user-attachments/assets/279c3864-6339-451f-8d2d-d59b0d0fec2f)
+![image](https://github.com/user-attachments/assets/393530f6-008d-4074-898e-c4341c9add4f)
 
-### # Étape 1 : Configuration de Wazuh dans The Hive
+## 6.4 integration entre wazuh et the Hive
 #### Création du script d'intégration personnalisé
 Créez un script Python nommé custom-w2thive.py 
 
@@ -108,3 +114,12 @@ Ce script servira à exécuter correctement le fichier Python custom-w2thive.py 
 
 En résumé, cette procédure permet d'intégrer Wazuh et The Hive afin que les alertes de sécurité soient automatiquement transmises à The Hive pour une gestion centralisée.
 
+# Projet terminé 🎉
+
+Le travail est désormais terminé ! 😊  
+Les traces de démonstration seront fournies très prochainement. Restez à l'affût pour plus de détails !
+
+## À venir
+- Fourniture des traces de démonstration.
+
+Merci pour votre patience et à bientôt !

@@ -1,0 +1,5 @@
+[2024-11-26 08:39:58] main.INFO: *** Starting scheduler worker 6ef57e975fd6:614:_schdlr_ {"type":"start","worker":"6ef57e975fd6:614","queues":["_schdlr_"]} []
+[2024-11-26 08:39:58] main.INFO: Starting worker 6ef57e975fd6:614:_schdlr_ {"type":"start","worker":"6ef57e975fd6:614:_schdlr_"} []
+[2024-11-26 10:27:09] main.INFO: Exiting... {"type":"shutdown","worker":"6ef57e975fd6:614"} []
+[2024-11-26 10:27:12] main.INFO: *** Starting scheduler worker 6ef57e975fd6:785:_schdlr_ {"type":"start","worker":"6ef57e975fd6:785","queues":["_schdlr_"]} []
+[2024-11-26 10:27:12] main.INFO: Starting worker 6ef57e975fd6:785:_schdlr_ {"type":"start","worker":"6ef57e975fd6:785:_schdlr_"} []

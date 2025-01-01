@@ -1,0 +1,2533 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<ioc xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.mandiant.com/2010/ioc" id="7a365842-982f-43b6-993f-2c7db5e487bc" last-modified="2015-07-21T11:20:20">
+  <short_description>Hacking Team Malicious Indicators (A)</short_description>
+  <description>Contains executable and library files hashes. These files have been analyzed by Rook Security, and have been deemed to have the highest likelihood of malicious use. These files have been analyzed using dynamic, static and manual analysis. We also compared these files against VirusTotal and Kaspersky whitelisting. Hosts containing any of the files found in this list should be considered compromised.</description>
+  <keywords/>
+  <authored_by>Rook Security</authored_by>
+  <authored_date>2015-07-21T11:20:20</authored_date>  
+  <links/>
+  <definition>
+      <Indicator operator="OR" id="4cb46d55-5a9f-4f1b-9210-0a43673b5e01">    
+    <Indicator operator="OR" id="b8d29e7a-808a-4faa-8cbc-b50d5e8b52a3">
+        <IndicatorItem id="025492a0-2241-46fc-9ac2-0c9d9f2d4dbf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">_MPK.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7601241b-c480-4eca-a333-a86930f488fb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">9ff1afd5fc8595cd35741696a7a24a4c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="771f6859-8317-4c89-b891-e83c3a3d64cb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">637cf542512b0b6507b39686c7e87af30e7aa3a02eb9481a49efb4d0951adfe8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="af304c0b-b8b2-4c23-a1a3-f56c997db033" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">d73123ae61b9183f82ac9fa64c813f2b7483e772</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="68cf9719-900e-441b-8aab-a20cc3ab90c1">
+        <IndicatorItem id="d2e40079-cfd0-49e4-88b3-d362629a744b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">antivm.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="26df82cd-660d-4d29-995b-2ded2d8ed0ca" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">d553160f4db53c3ef30bf57aac67811a</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f972109c-f5c6-460f-b802-b9f31303c5d8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">2c2a1044acd7d47ade2e74b06fe366fdc1c363297b5292c8a362f34018ae100b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="69d16485-a76d-446b-8064-4a59d5987ded" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">3412967b6ff4d2ceece701b899571987b8c5d70c</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="d7698871-df39-49fa-93c0-f627f2f43387">
+        <IndicatorItem id="f9d33018-5d6a-4d50-9908-8bc5edf97795" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">AutoScoutTests.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="795350eb-3004-45b5-a357-6a66454ee863" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">a7bb3bcbd0b76c71cead0c9c41d060f3</Content>
+        </IndicatorItem>
+        <IndicatorItem id="dd9f0078-98ea-4801-ba4d-c82dff90581e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">6e6f6e40a2716d11425a88b560e80fefd1a16d81ddee9663ff42ab82ea3a35bd</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6a2c8964-043e-42f0-8e6d-c3656139ebe7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">84fe4e29cceafae55caf85952c0a83b92c75fba1</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="66c826d4-aaa4-4f59-9c52-5641ef363a5c">
+        <IndicatorItem id="7207b0cf-3bb9-468a-8ab9-cdabc6f083fa" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">AutoScoutTests-size.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="bf559b91-bc9a-4af2-8bcd-8dbbbf77870a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f69da77c13a651074c919ab26507c011</Content>
+        </IndicatorItem>
+        <IndicatorItem id="098a82af-02a6-47ab-a27e-6e13da4b9008" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">07ed3d9bd82a3b490f33f36117af3ad02152d51e9c2470eb0089dab1305368f1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c5b529a2-03b7-4b8d-990e-dc574bca89a7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">c926351a98a617b0be47608c5d03d08a2a82ee1d</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="dd668392-fc5b-474f-ab82-9de3361e29db">
+        <IndicatorItem id="bede1c24-35ff-4f60-8572-2473f9db064a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">AutoScoutTests_vmp.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f0df95c2-b23c-4469-85ae-bad7efd0639f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">cef9886a936a35af81ed23b702305ab6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0dfc6973-f521-4633-b7dc-772002d7d934" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">61fe96a5118b531e7f1659085bcd61084354961fb557588bae3619665a8dc681</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f89d2a80-f560-4674-9992-c602515bdd5b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">bbfbf78a4bfa692b9d152ecc679dcfe1db63ccd6</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="4d680e2f-8df5-4263-9c8d-07b1fdac1391">
+        <IndicatorItem id="daf6e914-69b3-426f-aefe-a7581d50e0eb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">calc_elevator.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="236c8501-a729-42fe-8832-a98746e486fc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">637969fbc85e184e93a96f146abd7bad</Content>
+        </IndicatorItem>
+        <IndicatorItem id="23b15940-0ea9-4d20-a6d0-8bb0f7cc879a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">9261693b67b6e379ad0e57598602712b8508998c0cb012ca23139212ae0009a1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="89881e94-cf69-4b56-bcb3-f0daed873beb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">8561291a00ec2c7cef2bd1d5daf48b350baeae8b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="2e60c4c3-2aa2-49df-9d67-7828ff3f0d9b">
+        <IndicatorItem id="76b176e1-d0a2-4148-aa32-2470e763324e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">calc.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a32811e4-2da3-41f8-a8a0-f4e8520e2714" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">0a011ad2222a93014e7420db94f6aa2d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8e9fc219-838b-4365-a362-6d2509702407" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">7279dfe295bfb075bff6a856097491fbd4c932970bb654c969a995322f0d03db</Content>
+        </IndicatorItem>
+        <IndicatorItem id="006bce3c-3090-4523-801c-301624e21edb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b36ceec3b2bf64802b56c610d3f0be29adc7d4b5</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="1f3a76eb-c12d-4934-9cf3-19527356b386">
+        <IndicatorItem id="2da346c9-a8f0-49f6-aff6-a9aebb3d6668" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">clr.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9913b313-a2bd-41ac-ac22-462b4cb95b1a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f4f3692c0bb00a94130d3b205e1e9baa</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e0027e4d-fc48-4107-8afa-6a01252c7966" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">3ea8909c7e92d10a39ba08b002b489e718d77f12754e1bac8e69d62891ac8417</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c83eacf8-d705-4af2-b5bb-e92f11966a03" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">7818cbabec362de92407234c123f5a6dd910122c</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="8f316d2e-37fa-4e81-b75f-7ec6d9947eca">
+        <IndicatorItem id="4fc4bbd7-b6e6-44b7-8861-2426a423feb9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">cooker.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9d67cf49-1f1f-42d3-b2a2-5c314d8fe907" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">a0764ea07a40604b295e8600a3b73231</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b9a6cbda-853e-4cbf-a308-2d4d2da7a0c7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">9a1dc317baac5b31e8f9498c979e623db6e57f34aaea6dac923853cec1a30397</Content>
+        </IndicatorItem>
+        <IndicatorItem id="840e5e80-4bb1-447c-a299-ea6ed86c510d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ed91c8a09126bd27edeb0a6f9e5ef64a9b5bd29c</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="2868d937-a61a-4855-be08-1c47c9ec9887">
+        <IndicatorItem id="06097e7e-8e42-49c0-9773-749fbd7e2dc1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Core32Dumper.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="10920f03-9f4d-40c3-b152-70defe2aa72f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">38bd6cd2b91810c30ceb661e54032f5c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="597c5c12-44ce-4abe-ada8-47b221f40f02" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">92af7c751d9353ceb1b449bb6ea1a29c7a68a5bd2344759ad1c974ac5c63dee6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0aa21b78-d0bb-4a4e-aca1-50458a43dfc7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">158be9f90b5f37590808e0c97323b6476d4c9f9b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="51a8a904-4b92-4da6-a946-7a1624272532">
+        <IndicatorItem id="cfb88e98-287a-46e8-b000-d3eea846d51f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">core-scout-win32.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e205621d-5ed6-4232-9e1a-e5d9860c7648" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">84964d5410d6c7754e36e7592334df5e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f7fec521-30bc-4514-8511-2c666e0638a8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">da07eca4cd4cccc81d9418fcc796d28bc95756c8d6d4ad9503effd12b6c0aef7</Content>
+        </IndicatorItem>
+        <IndicatorItem id="86143338-401d-4cc2-9f02-f31c2edfbe25" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">11c87f734bce1fec82087fd16e568472e960fe17</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5a65b4a4-7f8a-4a29-9220-c5f56690619a">
+        <IndicatorItem id="a6e6b7e7-ec43-407b-b1be-423c890a4bdd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">CPP-ProductKeyFinder.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c5d5235f-b305-4bd0-9561-fbb16dd90a52" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f62c6e428738f074cf90f21e289dd34f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ec3b4c30-4e89-4c9a-9a64-30f9f5f3c1c6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a4afe60c024a34ae16dfbde1224550224ab3195f3d5dfe35c50ebd6a12fd4170</Content>
+        </IndicatorItem>
+        <IndicatorItem id="84a47f78-7624-4880-b833-4b7bf7c2a25f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">be8a1093a62d3c2741227510ec09029a18b23a27</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="735ffadb-35d4-4c81-b978-bc6c158a9701">
+        <IndicatorItem id="14ea3328-2bb5-48b0-9540-4e92c3d59359" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">CREARCH.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="cdea6843-a984-4c2b-9fe3-3e8374bbf7d6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">27fdc0db940764a1218b7a3698571bf2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ef818f7c-f61a-4fdb-b06d-b184b77071ec" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">e2f8c5f8c3ab687b91dd28081fec71e0bb9f70066237768e7020fd992c80f2d5</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c1b5aa39-e237-4904-ab2f-e5b03681ff54" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">fb106fdbb8ab0ee1272271aa880c254f8da59e42</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="9b4e35e7-9d25-4291-923e-4603bde8e631">
+        <IndicatorItem id="4aca420b-5c05-401c-af8b-6722ee8dee5f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">dropper.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6b8f66e9-b151-44f8-81f3-917c9f110f43" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">360303fbb9f31d82afae87a4e71c8e93</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7065b16b-cbbf-4c45-9b0b-ffad3e157009" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">d31c5d91556d0dc52ddc77d70678441f6f7a647eaaf8e1438fdc5cf3160fb935</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c277854e-08d7-41f3-a891-60b14b86af68" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">3cbedf6f7e7c842f1aa3cc6440449fd2defa7df7</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="d7019b91-4a3e-4822-b1f6-f5cfb9df44a1">
+        <IndicatorItem id="95e529a7-8ce7-435d-a6ef-668437ec50a2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">elevator.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="01f59ad6-b718-4561-a9ce-bb7a6a926036" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">47aeacba39f33b6ce2fd1f654f760a6c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0a26d6c9-1cb7-45ff-ade8-ab0066f67a01" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">40a10420b9d49f87527bc0396b19ec29e55e9109e80b52456891243791671c1c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="718297c5-45c2-400a-83e9-19620c79a4f3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">48220b4aeb4a96e983d6b1478144592e26fc982b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5003488e-f6ee-41eb-874e-894efcc3a985">
+        <IndicatorItem id="a29805e6-c8a8-4c61-9e23-ae7661bffda2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">EXCEL.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="291a75ca-0cdf-4fbd-86f9-b5882bcd868b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">2b7677ebb41abfd97225b2dcf8bbea35</Content>
+        </IndicatorItem>
+        <IndicatorItem id="59fda003-3d7f-485e-9f18-827d29695be9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">dac6abd5ba0865b7983cff40f7a13d9cde89fed3c5b81c2b785e884f9ccdf28c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3edbc8e5-1c44-4b29-81b2-3030ebc925c1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">d86c6c85f3fe7981f7824f21bcaf45f876943e55</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="c5126f92-7394-4a7b-b0a3-a592e9ef499c">
+        <IndicatorItem id="9d10d190-8588-4727-83a5-1439416a73ed" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ExeLoader32.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7eeaf59b-a707-4100-aebb-de8dbb07d1cc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">be6655c17f0a797f2c01b2ab42b55107</Content>
+        </IndicatorItem>
+        <IndicatorItem id="be798f89-a14b-4393-8053-3e5b0aa9851c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">7561ace6f04ca6d023d7eba0c8cd49b2515baa71a40926f625538e41e21f641f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b49dde61-87ba-4c9f-8845-617205a505d8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">f7653b3b9d71303d8ac9425985400b321934ddcc</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="1d28653c-f05e-4b4a-8f78-dc095fa0f5a9">
+        <IndicatorItem id="cab65e75-e4a3-4b2f-9ddc-118ae5ee07cd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ExeLoader.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ceec65fc-d2bb-4d56-af56-35e156870175" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">83aff63d5b3855cff982422bebc779d4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6347c961-dedd-4236-966e-caa4393f043d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">32599e86cb3bc9e1f91ff630fa41cd140354a21ac47bdb48082fbb8fba900f53</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8b636cba-02e5-4dca-8c50-1e9bc8b901e6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">bff3f180564f072f45d72bd6a840e9cde68e863e</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="eb6e6bd9-0a07-409f-bae6-08f1a0adee89">
+        <IndicatorItem id="37471b15-2d63-49fa-9a55-ddfc6252c9d0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_$[35].exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="43b677fc-f907-44e4-bcf1-93f037f8bee6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">4170d7f066178181b7f86b5a1125a761</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3e82c2af-9d58-4286-8cce-643393fa73cc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b7df931aa020195726002b235740bc844fc4b105920d4a139ca6b5a069e43575</Content>
+        </IndicatorItem>
+        <IndicatorItem id="512668ee-1f2e-4723-8600-3b59105f2442" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">548e8ab0169f36b548a5aa5678ef1b033acbcda4</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="e6b31df5-9264-4cb2-9ab7-84470993ceaf">
+        <IndicatorItem id="75efeb4b-f122-4c68-99f9-962f92fecae4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_bzip2.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f166699a-e927-47fa-8781-54fbf9622f30" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">a64c6ebab211184ab23ae72aebdab976</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3cde91e6-0a73-4089-a6b4-2767d0a0472b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">8cf6258d002326a03cf4cd70d97837b02a1ba5f3451e88fa354947180fb93eaa</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f8e36e99-f0be-4a1c-8fc0-f8b4c194a49a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">88c9e88086c8aa987eeebe70c5876b7660cd12d0</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="6522e9e9-aea0-4e2b-92a2-259ccb4a388f">
+        <IndicatorItem id="74e2f395-f991-4b39-b81f-36ef4038d2d2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_dat.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d093acf3-156d-4faa-95fb-6d4368b470f5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f91a6d14a7e0257d2da9b1b6fbc6010c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7b5a0b53-f7b7-4cf7-ac47-bf0b13232053" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">72ec760b698dc19693eaa846b2cc21ebceec4ee122feb30cb0802a9920af9898</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d1a8b930-1e18-4f60-b907-ccaceb3e26b3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ac8945be4493b660b4ab4283e644b9b0ab3f74a7</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="c4b93d95-4087-4fc8-8acd-a2873bbdb1bf">
+        <IndicatorItem id="31443776-1f35-49c1-b1cc-85b2f365badd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_dell.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b47eb83f-f9cc-4fda-84bb-1dfa5d89ca90" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">652a5cd27ff8966d26db94bb394ce4d1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="bb45dd8e-a90f-4dad-93d7-116c52d89682" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b6d736a68360253a94cc89bafbfa3141c382079d3e74346b12251da26149d1c3</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9b57917a-2ec0-44d4-8f23-4daa0ac81f92" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">21b5f25b33e6db635ecc245291b092748d075719</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="ae6b04c1-7806-4217-beb8-c9ce79985b85">
+        <IndicatorItem id="766abdcc-063e-4e9c-8345-659825ee2986" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_doc.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="46bd539a-ccec-4613-9990-a069abba3176" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">0be0c072cf2a885d77886705e24e08d8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a1076a32-e1eb-4002-8e5c-f052266942b3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b924993e72cc8fd0b505e95cea5e8b09d17d2a15c9d9ebc2b0c32843edcd40ee</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3485a752-cc38-4166-b7c4-710cabeabf91" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">0e6ebd6d90cc59eb572762afaca548dcc63397d8</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="6fd61ab4-2708-4088-9d8d-8a440858474b">
+        <IndicatorItem id="d056123f-676d-4b64-8222-00176e715c03" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_final.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c4fe772d-9073-4105-8272-e9ed13037d33" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">2a2578d7f22d3b2ee52c5d46bb5fdf05</Content>
+        </IndicatorItem>
+        <IndicatorItem id="665989aa-829f-4841-a4c1-604147b96a1e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">4d9ced2ee7d979055d33564cfa5a67773e34f3e51d615f162003311c76f51bdb</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4b7f6f74-df42-4651-9d35-4d466eeb5c69" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">0097a9fba6b0bcb09e9473816e51c2c8e48284ff</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="c3d1b5bd-91ed-446f-b195-f2620682c348">
+        <IndicatorItem id="63654c26-4baa-451f-a3db-6b1a38728709" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_full.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="53602b38-26fa-4c3a-803f-7db5685eed47" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">d341cd4cde7d8b10b3362b3d1b640d14</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0260f819-1896-4d9a-914a-d3d78f6e6de2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">639152dcce89b669fa00213d853425bee35f8b79970a663492d24ce29421fb75</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7245d375-d893-4850-8744-b03091aa856c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">753bb0e7250d930957dabfdc0809352eed153b31</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="dad9e44e-0427-447f-97f5-89948402d61f">
+        <IndicatorItem id="6a8e3b8c-a842-4cf9-9a54-a109408fa998" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_jpg.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="83202bc0-1ac7-4b86-966f-8ec8c34068d1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">ed6d8b6078e103b2d12a7fd339838a9c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="31e3b9c9-b00d-4102-960f-8c1627c21228" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">bf2f9d19521cae12bf25a4108418f6c234af6cad2d7a6482323a12a2da13ebd6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="fa30174d-49c8-4505-be5a-dc9021879d6d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">52fa70529cee1101067e7f6cc2532ee64506ba11</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="ec9a2ed9-65cb-417f-a887-d492e0c2819b">
+        <IndicatorItem id="6002aa77-4a9e-4808-a07c-3a6e8d90a7b2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_logon.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5a5b718c-6606-4622-aa32-b9c695edbc9a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">57acb822c5a03afabf9082ef3fd3306d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="bab4e30c-de22-4673-85f9-020810244ffb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">0dd0325e09c0ba103aedc9e899192204ab29f4a0d35a7e53e5c800d9284a37e8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ff0db605-f6c8-4ea5-8af0-01c7809ce691" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">6f733dea7027321529d43421cb2cc5444b4e0785</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="d7fb1f88-c0f2-4e59-9a09-bc94565f2baf">
+        <IndicatorItem id="dc24f5a3-5441-40c8-8c67-0efc96b929fe" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_lzma.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="dc6d06ca-b12f-4ce8-8dc5-d76763647537" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">56f3437184e1ee96b1161135f3c5a1ab</Content>
+        </IndicatorItem>
+        <IndicatorItem id="35d2a39b-cba7-4013-b9b8-bfae680f5229" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">8bba59ce301d510bc3b24c941841ee4a8b0858d37e31c9d59193b78e7da81d9a</Content>
+        </IndicatorItem>
+        <IndicatorItem id="78a4c9af-855d-43f7-923e-0a1ce42a71e1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">8cddf9c84e4a7eee3da4939ee0147d1e39ee3e1f</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="581a7569-88d0-4cc5-84b3-2e00702d4660">
+        <IndicatorItem id="35787638-d2bc-4d9f-a80f-a614959332d0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_noagent.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d868bb65-e7fd-4f8e-af23-0812b8d9fe15" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">bdfc8d71ed9d065f7fba87f84adeea3f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a80e7721-9833-495e-87cd-19ac00c04a63" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">91b0995ee522a6a01fe112dd6cdc21f2cd57b26ac84d8e3065f124ccb93c5eb4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7d98b78c-8395-4f11-adba-02afdb5207b1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">9432d96afa2618213a7e2ccd6c9735291c694b9a</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5f373acf-cf1b-48b7-ac3e-cf0125551a66">
+        <IndicatorItem id="1216ee19-2e4d-4978-bb2d-094d1d4744c8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_nostage2.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="28d58963-6b22-4d87-b678-ae998ef81fdf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f063ea5b63c9eb0e8aff3420caf4b64d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4da36cd6-a0dc-4860-8712-7e88ed00b082" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">ce5d792faaca61d7bb63367f8772f492ee963f054bc03e61b4fae774c3a3c343</Content>
+        </IndicatorItem>
+        <IndicatorItem id="91918a45-f0e8-406e-8549-0e72f100ead1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">537506539114118726725947814c6368cc507ed4</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="77269dab-1c5d-4ab0-850a-d5ff2c0dd0bf">
+        <IndicatorItem id="4fd6ce4d-3667-4dad-b857-c2544cddc055" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_notepad.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f90216db-6618-43f0-a326-71470e3dd2e8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">bcd74698b43531a3df7fb2f76f4b0a56</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8bf60c35-93dd-4732-852a-9ae3e21b6b30" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a23b5fc7d309b982f9dafc712b6a95c1cfce6102f86a7dc3f3013819638081a9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e96a8c91-c7c0-4656-97af-420e90e371c5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">c5959b7d97f2855950bc35c9e0477b1940a43fc2</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="a968b1ef-7a9d-4fae-bd16-dfd31e6d9e5d">
+        <IndicatorItem id="9550c09a-d28a-4c9f-95c5-a09ff4e349cc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_rename.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a4e99c4c-d1d0-495f-9fde-52ccba5b732a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">d9faaf817ef1c3ee664659049dde5f39</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ecfa754c-1555-4635-bbbe-eeec31d4c85f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">ab4de0951de38c475d846da1da8336b97e886b6dbd694332f3624ee5595186fe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ebf80a27-1336-409a-ae54-9117f055f060" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">c893cd86c0e0d6ed267a5f38c8e51b79436dac62</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="a16982c5-7481-444e-899e-ab8571732fd0">
+        <IndicatorItem id="36986025-9643-4a7e-9242-0d513f378a71" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_signtool.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="06b8c67b-24e4-4142-951d-21b2a89fa86a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">ae0d2278aa783b8dc1675f41cff9d07d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f450973c-6d4d-4c49-8521-fbdec8dc346b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">d5b3cc429c8a6fba074d9b1e2963273ac13cead47f63dbbb97e640b74e407134</Content>
+        </IndicatorItem>
+        <IndicatorItem id="390d185b-ab0e-4f84-8911-45cf12db07d3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">4eb87cff1cf2f1411248cd06b497cac564ed63fd</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="f821c656-e85d-4ea3-9cb6-4d5916aa6b3b">
+        <IndicatorItem id="b6f634c8-73cd-4618-a2d2-fc80b309d32b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_winlogon.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0ab4b3d2-fc28-4764-af3b-ef052cbc4fe3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5c1215ec7da96f58a1e3e66b60c1d4ed</Content>
+        </IndicatorItem>
+        <IndicatorItem id="af4615ae-dfc2-40fe-bd5d-4c65b31d2ec9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">2ef643a29808aa6dedeb69165d8682d5a58a95aa68bce856783a2b8dc2d71087</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7b57726e-ca44-48e0-885f-726dca3efc0c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">0837b3eed579123555ae09244b3f23aded72b9b4</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="e6fe8ec2-13eb-4aa2-a09d-676fa2723455">
+        <IndicatorItem id="4f34f91b-cf1f-40b7-8876-dacb02a3fddf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">fakedoc_zlib.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="258109cb-e210-4eaa-bb41-cf3360e2cb87" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">148b8f6c9e47e59f171e2cc938382ecc</Content>
+        </IndicatorItem>
+        <IndicatorItem id="80b79234-7080-4854-95c6-801dcf366669" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">60f4e50985afa8c0b2437c78467fc11784416791cd8cacdb37542a3e14d79871</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2b117b14-fc71-4aa0-9251-53e7b78065be" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">6204297b04970e0f7c843a28636b2e5e28213e93</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="484ff11b-d984-4c51-88b9-f4bcfe4c5df9">
+        <IndicatorItem id="74c9e4c8-69a7-4aae-a926-42c7b4ae5c10" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">firststage-2010031201.signed.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0e8910a2-3e0d-4c8c-8e87-4c1a054778ef" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">cca243be233cfa4c3f44c2035b5db135</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6e8a84e5-a8ed-4bbe-8432-277f3ef429f2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">1a178c22b5e9a7e99c0c733ff9d8452b22a3418b3c137687c8407c309e79a714</Content>
+        </IndicatorItem>
+        <IndicatorItem id="850de0b3-451c-4dbe-b182-7283d3e1ae14" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ee0d1a3ca639971d130eff10c22350c77a4a062c</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="3a79917b-e9e8-41ce-a83f-a3b80130182d">
+        <IndicatorItem id="903da2bf-4775-406d-8974-c0d287e015f7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">foo_flash.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="873a1fb7-3b17-4862-a14e-28102e88e8dc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">bc7e2c790deaecf69a69c042932e428b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="02dd2ca8-c8aa-4e83-927a-383ce585c8d0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">d5d23fbad723009a6a6364ef28153ffc95190e269cf3749c3cf28128d4c89be1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f3436230-788a-4465-af99-e6bcc636baa7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">8cec37385290b004e0b6514a44cb0bf7b7e64aac</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="61d7ac67-b53a-41eb-b977-c0a27a1a9d97">
+        <IndicatorItem id="16f6e976-7638-4fa5-ac2f-ea34cafeed15" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ida.4.9.rkpo.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="22672ef2-0ba7-40f3-81fe-de1d1f4f5b32" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">92a05da3047dd74826e09acc2692fe57</Content>
+        </IndicatorItem>
+        <IndicatorItem id="23c842b8-0461-4224-b2af-f74d938b0fd6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">cfa438d2d1426c983134203329e30ac92a4c5f6170e1687dc287ecf67ef53404</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ded42c00-ecb8-4965-886d-35dc53929368" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">23442e4cee456a1571f65c75e0e53c388e194d7f</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="195c04ad-70fd-4673-b3cc-3af82a4cbd7a">
+        <IndicatorItem id="8f3bd4ca-c2b0-451e-a77a-bef543ac584f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">insert_cert.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e6a3d55e-b8b3-4534-9a0d-fc7fb68da030" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">68cd61eefa0e6a7a6b36fb359bdd93ae</Content>
+        </IndicatorItem>
+        <IndicatorItem id="eb1ebfe9-7074-40a7-945c-83f919d5506f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b785b107632a3b8e9070a5a9a610202b46d916709f6b969b30c5d3375a2f38e7</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9b836723-67ca-4581-b478-d734242cc51e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">2f4e851d21c45e9b0a77a9cd9a0d5500a7740395</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="9ff30d18-eb81-4b56-ba16-85bc6f8e0824">
+        <IndicatorItem id="b58eee4a-ebb9-410b-be53-5254e8bd02d7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">install_flash_player.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3ea980d7-ee2c-4b57-a9ed-aaf7bfc89fcf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">1ee3aa67213868df9b08d00f3bfca6b1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9ea91f3e-5220-42be-afdb-39bf9e5b36d4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">5e5157e77089c4cfcfb2dfc82a574e465a943323e330dfe15316553d41f3d7eb</Content>
+        </IndicatorItem>
+        <IndicatorItem id="725a55f7-ad2b-4e09-9fcd-22cd1996e853" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">9f6a16d59f1159110caf32df1ad2bb6183d8bc49</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="6a8d332c-99af-4c27-bd73-0a1a3452a06b">
+        <IndicatorItem id="64774e1c-a4be-43e6-aa14-dc11c3ccf0ed" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">jre-8u25-windows-i586.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b406ff15-2a9a-486c-b75f-5bf616105a9c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">2cdd85286c5531557f3f20a7cafa7291</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6ca02587-ff2f-4ba3-9137-6922dd599670" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">8f6988e717e0334b33b7f4697c8ebbb5038c218994c8da7dc295986fe43b2b8b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2ce6f4eb-497f-4d51-ac28-a537b47b3457" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ff3d21c97e9ca71157f12221ccf0788a9775ec92</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="042319e3-b53b-491d-ad6e-2e0a723afd86">
+        <IndicatorItem id="33a3b06c-6d92-41e5-9e72-354bd8d03a58" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">keygen_windows.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="980e1094-76e5-4c42-9311-0371e7526afd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">ef61dcb3711fd43d1a7e40b6dbd7d361</Content>
+        </IndicatorItem>
+        <IndicatorItem id="97b17dfb-de9c-426c-becc-994135ca78a1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">feee319cff39fe40dd0e0651bdbb24e9701d7f5adc9eefbfbd4e7e465ebee7f1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="43536876-d663-4d3a-b1c5-701e40ccf990" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">62de7920de0dd9904b9af388ef5bb4c277a61051</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="12ece285-246c-4841-954c-a1f4ef4d1702">
+        <IndicatorItem id="36ccdaf6-1022-41d6-bf10-c7f241b248f6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Loader.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ff3e872a-68f9-433b-a15a-1a7c66b685a4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">780c1904904356bb7e4304f37bd98c7b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3b6f165e-0e84-4ffc-9d03-49ce070eb30a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">c52f4d1cf3ff09b22cf2f4bef867456aa7426c00fcd19c38b66ee3adc7eba057</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b91cd547-410b-4d31-8023-527b013b09dd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">c520096fc851bb0da060fb6cab274387ca8e8f88</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="82525e0c-8577-4118-ba72-9a17d0b3f335">
+        <IndicatorItem id="8f88dc13-1230-4a97-820b-e6baf415212e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Loader.exe-validate-ca</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ec0267c9-f006-4a59-9b1e-1b1295f0c342" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">7cefad54a4656d68d5662836d794b5bb</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0f96c3b9-8a03-4fab-ac7d-2a1c42b725fa" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">7fcd2160127471fbd92e3dfd656d73eef31195f1fe5a1c77027bd2a961467883</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c554f2d9-2859-4bd1-861c-4f7a52201039" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">441a3f4e360996f53a0ca5bf7280c03771badb90</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="e62c08e2-23aa-4aa1-a75f-daf6d8c7ddee">
+        <IndicatorItem id="c5c86b46-3cf8-4d87-9e99-e5f0ad276dd4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">LPInstaller.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a02c0c42-bfce-4541-8397-0d9d24281fa8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">58a5485bebda446634c538f20362f0e4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7d0ccae2-f14c-483c-a434-6d2dc875c139" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">976a843ee5a35e5015b5b2394e520e82403e6f81f877a4206bfe705bcb5e13e4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0a4d8a72-e1d3-4a23-bc97-a6fddd06c20d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">9b1ed2cd261bc4b6f1ccf8441dbf3d5c936b63c4</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="c427c00d-79f3-4a4e-b782-2da10948890e">
+        <IndicatorItem id="ad2379ed-2723-4068-82a7-3a5d4438a60d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">meltapp_uto.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="49c8dec2-a185-48b7-91b7-971770db6a95" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">21749bb7bdeac89843a60b0d032cf874</Content>
+        </IndicatorItem>
+        <IndicatorItem id="545bc456-c07a-4c45-ad85-3275a08f1547" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">3bee8a4ee4efc157949587342ca73316eb9c95442cdb25dc349008c43dc64ba6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="22a91e1e-5340-4b0f-9d67-e62bad6ad00b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">827ad016a75e822dccd4d3c0c0cc178e7702a99b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="02e01e24-1a11-444a-829d-57dc9e3e6de1">
+        <IndicatorItem id="b10c9619-f56a-4d62-a767-78380a35a89a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">microCadCamSetup.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c756e427-3ec7-4707-a5b2-e99dbeae7407" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">081b26d9ca74faae821e0b2eb2bb1fc5</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6882846b-f6b5-44f5-ae65-12eb49e9560d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">4ae1e35dc83825dc81e886b7597f00781b184be4fa288a8aa7a3c0f62a526387</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5a6fc593-9f0f-4eb8-9e65-d868ea81ba7f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">28fb3ef8f16da864f44529f1fa09872af6b7e858</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7059b927-512b-40b8-bf4b-1253dacba0cd">
+        <IndicatorItem id="740afc6c-2345-4d47-8a75-39d2e2c178d6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Microsoft Office Access 2007.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ee1bef45-ffdf-4746-8c0d-cf27f31a415c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">0ee9ea3b831677df1ccde2eaafacd165</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ddadf0c0-363c-4c6a-8128-6541823edd65" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">13397ce53d5bcc5339a9e5b83144eed11e051666abcf26ad393505cfd82ee9ea</Content>
+        </IndicatorItem>
+        <IndicatorItem id="37a7a581-0fe7-4c7c-a800-4c8faa7c0df2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">6efd210c94ef5d49de0f705931b9e93b37e688fb</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="a8095c75-7c4d-4a09-8259-c50133398336">
+        <IndicatorItem id="781491f9-19d9-4888-8131-a2e7f1f15759" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Microsoft Office Excel 2007.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="20dc4a5d-3a4c-40ff-9d4a-7919215c2935" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">710cdda3bc6ff73c2399d0a718c9fbe8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c0325e48-8cb8-4ea3-97a9-e9723850fded" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">8caa3a2f4c39992952cd2bb38bebadbbee5fb68114500e37832221d4e59aea30</Content>
+        </IndicatorItem>
+        <IndicatorItem id="54f94f92-86bf-458d-9ac4-bc942109cf79" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">09b49ee08641e1d18532a67acc09d98a1b708545</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="458e65e5-8959-491a-b743-f59d8391ba61">
+        <IndicatorItem id="5f51f3e7-0dbc-43cb-b7a0-da453bc885c8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Microsoft Office PowerPoint 2007.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="75063b23-14e9-4548-aaab-e458eeda9fab" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">dfd6d9d5d7074e3d822ee7002a2538b6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="11eee180-19ef-479b-b36b-d0b3056077a7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">d70699e40511f4dd459420751e66a2564f050ab17b101ca9955423de2c579fa6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="88b177a9-c24c-41a7-89ec-fbbb6839e280" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">076b09d71c5c55e7ae6f044791142470799648bc</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="04b4de5f-5494-4f5b-8a73-f68b89737d5a">
+        <IndicatorItem id="58c8d282-e88a-4112-9bdd-abdb10876f39" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Microsoft Office Publisher 2007.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="541a9bf4-71f9-4d76-86ae-677074d8979d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">64e273360b3f45a60cf99ad564954a19</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8101bb7f-248d-4215-a10e-49f228c1eeda" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">73ab06fce6b9746c1010a3c588c62069213d94134823b7527559a0f41c88d20d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1676458b-9529-4b79-8c98-7c80c5022fd3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ba553804706964473d3782468b1575548da0e211</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="82e220c8-40e0-4d1f-bba0-5456d16c266b">
+        <IndicatorItem id="e99bffb3-f026-407c-8306-590c395716ca" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">mkidp.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b68e19b3-41e5-4082-8dcf-4496d520254e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">aec0f36dd1296689a740e43e3b51d734</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2fda61fb-7480-4dc6-ac15-e3987824c712" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">c14327a7d2c7ab2d3edb5c0db2f87688c30f4f781c10b6017183f74403494c07</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2f5697dd-7d4c-4add-9464-0a8722431e69" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">621e2fbcddee9d4915c2bd4689234ed40475dfb3</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="31395cf6-0d39-43b3-a311-c48d850762d8">
+        <IndicatorItem id="16779325-c9d6-4731-86b1-dc4ecda9ac81" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">MODUNAME.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a606b7bf-74f8-4cc1-b6dc-a1e1ee031c4b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">c36d60abed084c6d61741b08ff6681df</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8db2d58d-85ee-4ee9-8d28-b9c36a4b27e9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a1eae49b5f732a7ceef30fa8aa1218c9c97e6436bfab5555ed79e4b29b0fda83</Content>
+        </IndicatorItem>
+        <IndicatorItem id="eefbd850-7a1c-4980-bbd3-fa4c0ecb1c35" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">23ba80af8dfb460b579b46309f4b7f0de53bbdd4</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="19ca858a-8cb6-45d8-9ce6-0e60972c4c50">
+        <IndicatorItem id="aedda3d9-e1cc-479c-a09f-348930cf509b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">MPK.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8fe28aed-1a08-4204-aaaf-11c6855d6ec2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">b4ffce10c64d1107901318b43b012e9a</Content>
+        </IndicatorItem>
+        <IndicatorItem id="767fb9f0-8287-494d-a18b-90e9a0c64b46" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">c8b3fa82fdd97f731851fa19611499b2c7a493cd689ac4d1796b3687d7fb6c82</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c24f896c-0378-487f-8f2a-fce16ca8609f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">a047c5270762a05632b908c65beb14908bc4972f</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="8dc2ec00-490e-48b9-97f6-d6ec91f4568e">
+        <IndicatorItem id="d23fb9ed-a0c1-4378-965d-85ff62c319cc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">MPK_unpacked.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="cba6002c-4b45-4508-b1ab-58d8821ab08f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">9ff1afd5fc8595cd35741696a7a24a4c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="45376a58-0d47-4eaa-94d8-c7376f830d70" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">637cf542512b0b6507b39686c7e87af30e7aa3a02eb9481a49efb4d0951adfe8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6dbb64d4-86ff-4c32-92ef-de0d20d8fa26" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">d73123ae61b9183f82ac9fa64c813f2b7483e772</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="497d840f-804e-4935-b690-a28ad5b05b39">
+        <IndicatorItem id="56366638-ae16-4bc1-bd8d-83bc67f75491" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">MSACCESS.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2c35886b-8369-4ddd-b8c3-f3315e1091d3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">2e6707641e23e18134e93e3c4f51c840</Content>
+        </IndicatorItem>
+        <IndicatorItem id="cd087eb1-d439-40ed-9c14-cc05a4577848" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">71864e38545034655c934d46f6b50485cb3d605ad39a7c3889f7d3816440bf1c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5a0f0b21-42ef-49e5-b0f8-cf08d87b5086" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">275c5629439be1efa5f586b0bde9f447b85be829</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="8b9062f1-e025-4755-9737-7529015cf152">
+        <IndicatorItem id="c1001459-7a75-4516-a815-0b6469595ea4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">MSTORE.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1f30ddbd-3237-4f95-9b33-9c5293ae2445" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5bcdf425169900ec224039b72c6ec5dc</Content>
+        </IndicatorItem>
+        <IndicatorItem id="cf46d973-4419-4a51-a9cc-8f7bb5861eec" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">c65d9d6defebeacbf761ae61baee0386dd7aeb2bd8577611edfadfb765e6ca52</Content>
+        </IndicatorItem>
+        <IndicatorItem id="242ac95c-2680-4b78-ab78-adc80bff3e7c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">589c73842529a15fa9b77b6d4c09b4f519b16fc5</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="c976c28c-cecf-4ebe-886b-6c933a962eac">
+        <IndicatorItem id="fa2c1c72-7158-45d0-b020-70d425321f88" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">msutton-comraider_setup.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ef7632b3-d2c3-45a3-a62b-f5698022a2d3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">89eab97e6862ab4c47d9f66f850e58ee</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e4ff7f23-f636-4b8e-a0c7-b553ee18282e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">84058a01bb257a5c0f9a27f893ded585d349c9d87036d1a386fb8368cea2f545</Content>
+        </IndicatorItem>
+        <IndicatorItem id="bb0914a7-a673-401d-bbdb-9107cd246612" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ab30ae8b0bf1f3986d9635ea6caddf3878b26fa1</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7e19632b-b423-4acf-a4a6-cbeb19ade595">
+        <IndicatorItem id="fbb52394-8865-46f4-b078-dcdeecd0a5c6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">NortonSS_1YEAR_US.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f4d8cf52-94d0-49fd-bccf-43045aae1902" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">56ac87bbab2e471bad63918f3b953745</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a352b1df-b573-48b0-b2b9-e3d9c4f5a6c5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">edc3fba72f9a485c43c1aa3cbe0c5752d8af2ec7bfecb48a46f467e549daac05</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3f0d6930-f60f-473a-8cbd-2a289b3ef272" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">89b07f90ec9db28d0c53423e6f64745da7e607cb</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="253f24a8-ab6b-45b6-88d0-cb3b881d2edd">
+        <IndicatorItem id="4eefb012-e4ea-4b36-b41b-c44354e065e2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">OFFDIAG.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2126fea7-6213-4628-97ef-9824ea265e3c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">d54e2e633cea68716023e0e524325ffc</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5b3a202d-d5e5-4c05-8b2c-c4442f9dd7c5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">72dc79c35aac14f453674ac3b62c268843a9c614ae99da01879db04c1dd995f9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2b8bd650-eec5-463c-8a48-ea33d0e43daf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ec316bb9b9d0a09c2bd566e98d6507edb9932eec</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="78fa84ed-0a76-4fe6-8d58-9bf3b11db99f">
+        <IndicatorItem id="d1bda5f2-81e6-44ae-9810-76f00ee1e6e3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Office_Word.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="80ed6c96-bbec-4473-80cc-dfba41823ebe" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">97ff374ab1a7358eb362406baa0554c8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="339ea39a-4756-441b-9dae-9781a00bab7d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">010ce301d6ff509e111e9102ec7b883fd888f1510fe3bfba6d71986704dbcd28</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e1d3abab-9d6a-454e-9410-4a6e4d855f7d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">389c1d337548d2e3721466a3ca3fd54881cd5aee</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5d9b227e-d125-44f0-b3bf-99e828912741">
+        <IndicatorItem id="09fb29e1-8e86-4a1d-8285-0c808d9dc30a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">OIS.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d069b040-c0bc-47c6-8fbc-a7432cc196d4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">94bac050560b074bf7f48dcc282ab7ff</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d28c13ff-7f19-48cc-9da4-e35aee86d550" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b0d3aad477487039fbe9a33a66bd3654fb17f8af731c965d78977ebeb20392a8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="172da7e5-d8d4-4a68-866f-ae7d241e7657" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">0ac7f04dd08120e93ea449b49eb8e557a5a2ef22</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="34e3bbf5-acd5-4b03-9d79-b5515628dd4b">
+        <IndicatorItem id="f057009a-f1fe-416a-855b-73e82a2422e5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">old_cert_elevator.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e8d23658-73d1-47ef-adaa-e884dd9147f9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">56eac983a8caa8c0037c6ba25e9a2d9f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c63737de-83db-4424-8789-78a104dd4a1b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">fc609adef44b5c64de029b2b2cff22a6f36b6bdf9463c1bd320a522ed39de5d9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="30329c6f-1424-4ed8-bf91-c3e2998c1195" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b7ec5d36ca702cc9690ac7279fd4fea28d8bd060</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="86c3e917-c1d5-4a1c-a26e-91f8d1bd8a18">
+        <IndicatorItem id="91d078f3-090b-4df4-9e68-7d9e2db6a7c1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">OYMAN.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8bb19b2b-a2aa-4955-a5bd-4d402a82f101" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5e000fd125d326782a4b3dbd8eb65cf2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f214f6e7-1ed6-4f33-9b2a-c2f9fde861e3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">602bb8e06f9ec55f1b4c78a77e4ec229548763076a69e6606a898c4dd9731ff4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e04fa231-cac6-4034-8706-e9d286a5da93" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">a6e5539410661a8407ea022f4f55aa13ca674fa1</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="6db18092-acd2-49a2-a06b-ce4a81fc084d">
+        <IndicatorItem id="61f753b9-b7ba-4c87-b5e5-5ec4f8ccff84" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">packer64.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5ce6d703-95f2-4b30-ba7a-c24c9875ef72" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">cc0bb7d434d786bf35447cf90e3b88df</Content>
+        </IndicatorItem>
+        <IndicatorItem id="17ffc0f9-13a3-4411-bcb5-4892ddcaf1ad" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">5691fefbba82244c63e2166e246b1ef16d66b46ff1434e13815c8796177dc522</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7fd6764e-8cd4-474a-8948-d4e12c533b7c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">779946589786d2dfea06bd102be88df02426b491</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="f2dcb872-fd7b-4d4d-b351-fdd6785db05e">
+        <IndicatorItem id="b5359978-af0b-4b42-9421-8686bd42a743" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Patch.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e30890a0-fe5f-4fab-8d7e-e57ce7514bf7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5cb4e4e218b97c09c885d157e83f7247</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3364987d-71d0-4930-91fa-7ec7f7fd58ae" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">150924668c8d7cd9899360eba12f13246538c50fbe7ef1ebf234ed7128c9936e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6df8601c-57b3-4abb-9acc-75e710a6ad5a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ca84583819c9723fe8d9fc69d8cee66687a180c7</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="3ccadde9-2327-44d1-968e-a07be62e49aa">
+        <IndicatorItem id="2243cec0-69b6-40a3-9a3d-ab6b2834c13a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">pcf.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ef02a81b-707c-499d-9485-15252ea7efcf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f7133f6037738c9c0ade22104349e8bc</Content>
+        </IndicatorItem>
+        <IndicatorItem id="bc696816-5933-4df3-8da1-bcb613c38ff4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">3d8a446c2da93d0c909caf9724ad452c66c944cf71f582a9b5002e9b2cc67793</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c9ec62dc-91c4-4c20-86f6-0410b1934869" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">1ba03151aee8276e95666df59e36506a9136634d</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="ae5da8b5-bb01-4de3-aa85-75f3b3da8c88">
+        <IndicatorItem id="9b5273d3-c642-4b66-a67f-caed617deafe" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">pelf.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9f790ed3-8ec5-40c0-9972-258a01aee412" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">875a81e316b0759f246bde12bf5be852</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e9560734-bb07-4791-ac32-e8a21c5176a3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">eda9ba61ad01810aa53eece81626e913c4058a3b3cbf65fded907528117db0ec</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f8a5062f-2412-448a-b9c6-477ca028f58e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b683759f398e76e471879efb52df1738bf1fc307</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="3aedec62-0d32-4a70-ae4f-5b7df9f8c73e">
+        <IndicatorItem id="a9b60300-845c-4027-be5e-22d66b383c1d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">peutil.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4fb23199-ae71-4728-ad64-416ee964fd1a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">365bf9ae89eebc67a34e09ad07ebf166</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1848bdeb-c57d-40e9-ae53-3985d4bd9967" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">314211107852b35dbf7d2abc54581aadfce1ddf79e1930bb44e37ea4af338541</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ca570512-b80a-4165-a6f9-8c4b9b7cfbe5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">09a77488453f586ac03782a539225487c44c3a30</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="71e415ea-39c8-47a9-bc54-2a0287d9a7c6">
+        <IndicatorItem id="9df3bafd-b022-4504-a7a9-96153d80eb19" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">plb.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f930096c-0fe3-4e3e-a717-891b9de447ae" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">4b8bb84127b0967d316e3d507a0f3b59</Content>
+        </IndicatorItem>
+        <IndicatorItem id="39a86461-7169-4a41-b051-832846255377" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">f8addfa091021a34f8b16fac0687b685b72ff1cac87ba1392d6195ab42954d42</Content>
+        </IndicatorItem>
+        <IndicatorItem id="59504dd9-63ce-4f02-ba4a-b9d3601a729f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b6435e8a9356ef2dc0d31b491b78f8c870a4bbec</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="1d248641-e57c-476f-87d3-5b83f460c768">
+        <IndicatorItem id="1d0233ea-56b4-4045-89f4-0d599da6a014" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">pomf166.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="93aebd11-d428-4817-8021-474bf9f7b010" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">56fd59bf9f93ab512cfb0822e20dc157</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b7625409-23ef-43f9-9bd3-eb3381b5a6b2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">f82c4673a15ff6c5806f54811c4e782b595a0a445476c3ccdbdc4cd200bfe36e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1d7fe606-8244-44c3-a2ae-dc318bfcec47" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">2f9a28719745d1f95818c424bef3bd202f4172e9</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="9cf384ed-4a11-4501-8081-b904161b8b0e">
+        <IndicatorItem id="cf8f9cbe-248f-463f-b2c2-43838af55713" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">POWERPNT.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b55ddc55-5d2e-4ffe-8d81-ad98b13b84b7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">dae2dab64bdffe40c3730f7797c4c372</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d1f442f3-312f-4de3-b73f-c455f02dd424" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">1c5f12e0c15adf930b31402e6586f3a05a0173237ea13adce2f01edde9748992</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6e6558e3-848c-44ec-acb8-cb59be2ce2de" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">80bf90a45be02815e6765e931063948bc563a8af</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="4a1346d3-d25e-4f5d-b538-9b2c6b18c58a">
+        <IndicatorItem id="d1f33ba9-0a2c-4145-a711-0bbe40bcb633" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ppsx.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="cb7cf108-3fea-4039-b65f-f6884932b843" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">7f1c1146f08a03ec811f443ac6decc15</Content>
+        </IndicatorItem>
+        <IndicatorItem id="93ddff1e-752d-42da-999f-d6b79f8f86fd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">3e9a6f168c4f9f6ce6c6db3fee35218408ee0f79189f53e174f19a439e4036fb</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0287c748-2a1c-40cd-be02-e63a31e949f0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">57a0d519db2354fb7f83f5243d4a9fbecf37f677</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="04543a47-945d-45f8-901a-d03444643875">
+        <IndicatorItem id="d8567979-9ff5-4e59-9763-fc164143fb2c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Project1.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2bf44c43-8d2b-4d95-bb10-bcb71647d695" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">a05c9161177ee61f3e5aba75fc0a4970</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a74f9ce2-ba57-4de4-9374-5a0d67f7272a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">559266876f060621f9b910ec75404946121460375b6f7812da717896e96dec26</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e63672a1-723d-437e-a480-61f837064dbf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">a14d7340ac6baf0b38eee37d7e3097d92a7e75e7</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="ef534ecd-5969-426a-81a6-6b2e21dc3825">
+        <IndicatorItem id="a23e7dfa-be25-4c5f-925c-790065591ee5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">PROVA.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4d3d6e25-fec8-44b9-b5eb-16d261c3b493" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5a724230ca622bdcdc0ba41e524821ca</Content>
+        </IndicatorItem>
+        <IndicatorItem id="72662ce0-2ff0-4efb-b6f0-4d2bebd2db5e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">90324a869541e0e67f0a3d4dcbdcdeefcaa4839edcb55ee163b7f26f80725278</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7eacc186-dc5c-4ea0-834e-115707abba54" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">c6993c06bb4721a8637390b282e30d5a1c91a22f</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="4f6fe96e-9314-4ceb-adf8-26eec9051ca0">
+        <IndicatorItem id="81e4282b-9fbb-43f5-ba18-b02ecc563631" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ptmobj.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4e76f445-d0d8-4bb4-9e75-4ef6316a72eb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">7421ef518702479d9b1a4b82318a1095</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0af3a9dc-f58f-4fd7-b870-6e4a64f3747e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b800ba5adfc26f20b4049dba2442be73347e999a224716c7ecb5271e482e0a4d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="70a6ffdf-59e3-435e-a869-768cccda7522" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">f771f3b68376fa211e590a7f5cb65f7cbab20187</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="711733be-c5ab-4408-8b66-87785935e199">
+        <IndicatorItem id="be8d5206-5266-4c30-a5cb-d7c73dca9cae" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">putty.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9642727a-0b67-4e7a-b0f3-11611972fb82" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">d7697f8af52b42e2fb59a350886f02a1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="875150b9-6ca6-4a50-a895-427138205ca6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">0418ecb096bdb3360694780a76838cd333900ebb26a168e3a95225e6579ea20e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="29fda4bd-e3e6-4769-847b-f89c992cbbe6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">34da42515658486c097b4a16c8e7ab6d3fd14020</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="b2836136-1f0d-4b2c-8b37-8ee2108384a6">
+        <IndicatorItem id="6ef324b2-c766-4919-80ec-16fe546be501" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">QPD001.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="79381b8b-9ed6-4179-ac9a-6a39899bafd5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">9ed0d182100447ad46b38f8ceef612f2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="88b770da-b41c-412f-ad7a-dae05241cdb7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">656c897b39d7867bd4d38696100a09e379b06ab5e5f6842c1329f6bb83e70161</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5317b2bb-7b6b-4614-b64b-0c6ff0f79cd1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">4dbdb482e6f4882ed8d31e1362e84fc104b397d2</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="25434c77-7935-46d5-afc8-47dea6c66742">
+        <IndicatorItem id="b7184f39-d575-4539-92db-34ffb1a53f49" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Quezzolino.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="97b79e14-79b3-4d7c-a6a1-241aad37bad9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">7f2aad2ad7bced650d9eb19dc80502c9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="53919ac0-9833-4ca0-b868-96ba1fdcda54" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">e378812f4347b6ec7a517d9c06dc1cd608322033743ec075afe26857bb65c6b0</Content>
+        </IndicatorItem>
+        <IndicatorItem id="105fc72d-74ce-4c24-8b3d-4dab9b42dfe5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">5ef6c7729e2f6d445fd3fd72f93ec637a5c32789</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="e128d51c-8599-4803-a44c-eb74183520c2">
+        <IndicatorItem id="6b434b47-7372-4245-8d54-e24a34fd8b52" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RamCleaner.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c0f8a7a0-1fd4-45aa-82a9-5664ef1565bf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">40e118e4ed768f32da3bd4737a5fc60b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1f0ee0be-4438-4591-91ad-b61b27a995e7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">7a136aff189f79dee342378d9d011ef35b639840148989670cd9ed3aaa404cdd</Content>
+        </IndicatorItem>
+        <IndicatorItem id="aec1ebd9-c894-40ac-a6a2-d84477f9316e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">58611fe7ab6aa2e2550c40a059c9f11e88b04252</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="0dd9a430-4e1c-4d9b-b5b5-4b0a635fe182">
+        <IndicatorItem id="1c1b724a-d888-473c-8ff2-46f9e79e0ad8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCS_0000000001.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2da778b4-de79-4a9a-94a4-da33b031b8d8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">6f653987ef4837ab20bd0b2d2f609ab0</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3c45ac45-4bbb-4212-8cdb-50e10c05f53c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a9e25fbb95253412de09bc1e4323602afbf5077aca71f861cbc7ad74581511a2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c541b6ff-72c4-4954-94b6-10ac201fcd9e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b149a8009f1c4e845778370d25f2df980adea362</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="71f890a5-d7ba-4a1d-8c86-7c7167ca6da2">
+        <IndicatorItem id="7130a7b2-b535-4a3a-a879-f9522e9cf8fd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSASP-7.3.0.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e3b5ab8a-1e78-4094-b71e-fbf7243c13d2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">8aa3c6e9cdb8724088c67c414691b66e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="480ebd16-4ceb-472a-9e5b-df4d13a3af5c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a801ca60fe94c8182274cbea1f5d3666d0b9aada7feffe3d9a613eb1c3a6f949</Content>
+        </IndicatorItem>
+        <IndicatorItem id="21f032ff-0e2c-4460-8f3b-5dd3e1bce252" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ae4ca2e5a431c67a427a36823aeeebd89f3ed0cb</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5a7b98c0-04fc-4739-a5b0-4024fc80eade">
+        <IndicatorItem id="b358ee8b-495e-4520-a368-d1948719acb3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSCooker.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a11506c9-9db3-4cb5-8c66-b3ed9a15544e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">e3bd52648f653b38d75d325f2c205130</Content>
+        </IndicatorItem>
+        <IndicatorItem id="40e6017b-2037-404d-8bce-fe3288be47cf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">79deeb5af79f9a48cbbbb37400b940dc1e709230d0b176669bc1d095c4bedca7</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0276df8e-d6c9-4fec-a9a5-4d4bdd9e6e08" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">26f87e87c78f075ff69aa7de4f6c50f97f499ab7</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="a13bf721-1a78-42a4-bfc8-090c10f7cce8">
+        <IndicatorItem id="2d2c12b4-0180-402d-8a7f-d5cf4e8df679" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSDB-bare-7.6.0.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d29ce81c-38fa-4507-8427-a9685bbc32d1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">4bd8de4ce17067db858d63997315aee3</Content>
+        </IndicatorItem>
+        <IndicatorItem id="34fb2ee5-288e-40d7-8ce8-8ee828738863" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">f2f6dfc7fc3ff1170a80d661c1dbc18dbdfa456c1327ac475a7b21a38ec014be</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a432c674-bb4a-4ba3-bf3d-39791cd64e78" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ee52c9416e9da9a1f67785bada3c9f4dae89d1e3</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="3c6612e5-8bb9-4ed1-9bf9-9c4d138be9c9">
+        <IndicatorItem id="c8cd44dd-8f6c-4920-92fc-cf44aa6dcec8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSDB-update-7.3.1.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1d4897b1-6f0a-4195-856a-277cd801a016" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">983ea03599f2371d3aa4b561fbdb9d35</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2b8bbc63-0d42-4a3a-99be-d17b78ae6a6a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">1b72081c4422785d8c6c016b10bdd7545e5fc6f1ff73277b0366e9b40e624616</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e299808e-9148-4f80-961e-809f42495fb1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">fd9516d2c5493009009eedc0e98e345956516d1d</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5424c740-835a-4020-9301-32959a381653">
+        <IndicatorItem id="b4a8fd21-5f4c-4d72-9486-970a84303abd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSDB-update-unofficial.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2e928354-328b-4d95-af5c-4323e113cfe3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">19e932c289b936f407cd93dc4162eec4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="86cbdbb1-abcd-497c-8cbc-796ac5c20267" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">fff8c7da09ace612e203a7d91b24e56a9e1715d5bfe6a7a4466adff284009a1e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e8dca38d-e6cb-4650-a637-d9c5adaa15c2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">90342657a424fcffa836dfa5136eb362f49fdfb6</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="1d4fe829-4502-4715-83cf-384dd105ea80">
+        <IndicatorItem id="e1d6e81c-3f18-4c7b-85a1-8aa3bb5f1fcc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-exploits-2014093001.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e56e32de-7a16-471f-aab5-9bc5c65b063c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5527d16136944bc3795bc65bcbbe65f3</Content>
+        </IndicatorItem>
+        <IndicatorItem id="77b8f36a-1fb3-404c-902c-5973d365e1e6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">42dc1f9417fb067c3b96622ccf6e8c80c9d07202cc28f3c4d460d5bdc6ff249f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="875b4199-a303-4065-902a-929b417cb0c6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">d228b700a6f4542a63337ab0899bd7e90982c30e</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="e11b3075-88d7-4654-bf74-8059b374b2cf">
+        <IndicatorItem id="fdfe6fce-af08-40cb-ba1e-195f6f1657f6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-exploits-2014120801.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="cfd11544-6d2c-4219-9e8f-684e0aa2e527" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f855633c69c3095b20a99bd12d023271</Content>
+        </IndicatorItem>
+        <IndicatorItem id="adf4d5bc-05bc-4615-81aa-abbbb39ab28b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">7927f3a35d87250253d8abc021d44cc496d2185f376f0d33b0365a68ba81e636</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ff83476d-1432-483f-a55a-e3d5ec1afa19" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">5004f0d0410666e923212e941f646777b91958b0</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="77394014-292b-432e-acb5-85ab72ed33d5">
+        <IndicatorItem id="e9d3e0a9-63c8-416f-8bd1-6c7087a7c170" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-exploits-2015032101.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7b8937c4-ca25-4c30-af1b-1c0bfc62b592" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">27f45f64f69d31839a6ec82185b5e030</Content>
+        </IndicatorItem>
+        <IndicatorItem id="51da3185-6f29-405b-bcb0-26ee50a4b817" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">5ec8cd3180a2576b92d53085ff5e3dcf4e3dccaf2154b59879969ef8011fd1c2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7f44fbed-6a12-4132-af17-5b7e2dc4f19f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">4edb69adbc1ebc884aa65cd42e1187f9223de3d3</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="eac7c8b2-e7a0-4887-a0be-bc176ef79b86">
+        <IndicatorItem id="6ecc28b7-7897-4e7f-a58e-77a3373b456c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-hotfix-9.4.0_2.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9ecf3477-dc1a-40f8-b637-1d8b54a6ca00" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">0bb14e2cbce99ac845c62bea9c5d62ba</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c2cfa08e-b99d-48b6-bc38-05b343c1f925" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">4f9f7f9b2a3ee884f4aa08c066a458a52f175a78b7748ef4a751543213b92d29</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a3bad676-5edc-49e8-8eb1-d553537ac55d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">33aa87925aaafa5c97df0c4334b3e70b5ce43552</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="71c89f0f-e2eb-4ce8-aa81-16ad0ca60197">
+        <IndicatorItem id="1f507652-5e83-4e2b-8cd6-4ed900e6385d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-hotfix-9.4.0.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="52d1b437-94ba-4450-ba9f-21d3afaeb430" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">c170a9961560e4c96215a06f75985fc8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="75002a42-c6f3-4e80-846a-7e4d4dbd43e3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">598bab73e4e2e9a09da64a16c807fea62bac20ec206384194478fcaf9eac1b14</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c2ec690a-c420-4888-bda6-a2ca6a6d8ed9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">edc03b57e86aab5f869533ce2487f6918e26d5fe</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="a6826538-b97e-48f8-802b-4b00a959fb89">
+        <IndicatorItem id="c9c7731b-687c-433d-abba-81e82062d2eb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSMacOsDropper.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="855a3c52-fccf-4764-84c3-6b1b5200601f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f12ed5b550d6856ccb501f9ad65f956b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ede52221-12ea-449f-9f9c-16b0fbec1c78" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a72dc5010dc21c3bc9075c74fc7b87f0f89cfbeb1b1c4cdab06db4262d84969d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="aa3856df-fd6a-4729-bc40-83b364cd4c73" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">fb9fddb2b74e62d2e949520de23d6a2a2a16e576</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="add513bf-3d20-45b6-a936-44c59c31c88b">
+        <IndicatorItem id="617fd009-6c10-470d-b423-dac5186cf7e9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSMacOsPolymer.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="15d7503d-f778-4db4-85f7-f47645d74149" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">7ebc36666f11c4285ee68501dc3c1b5a</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f01fb52d-d801-4450-b326-58eac552df7d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">71fe815f897877e69e4a37844a6d2feb40fdecaed1dd55b07472234e87e22767</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b69fc1db-3424-4a01-bf50-f89444846e74" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">f19e73120166b637ee7a941540979efaa4a284b5</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="1577d77b-5bbd-46e0-9c73-7ef32b0ae9b2">
+        <IndicatorItem id="993115f9-92f1-446c-91b1-b9282cbdfe99" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-money-2014120801.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1d448d85-9d75-4925-ae41-426b468fa9c8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">c89f6c16e581e975a12ec19191a766d1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="db685191-4ea5-40a6-b597-0748ff4589b4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">654e7dd64ab4ef04ea22f63fb0497346fb8d484a488be428d78d32a17654604d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="aa3b285f-082e-4c86-82e1-f8ac1afbaed6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ab57daff9d93e71bcdf7f4b356089d3ae681602b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="d73fea52-f0c1-49ff-90ee-5f622d6565e0">
+        <IndicatorItem id="867b29ca-97e6-46e7-ada7-53bdae89127e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-money-9.4.0.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f3fcbbc3-c707-40ab-aa67-df7d53d1a4c4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">b0d0828a54cd184137de8d0deb698119</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e7b3d13f-4535-4d1f-bf22-1d90faf743f1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">6e678dc4d933b186557f671913fb2fada37f342d5007dac0b745ca718d2e7405</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2b371e4c-b291-4e5b-80ba-1e6b8c3b9120" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b0e59fc1d41f66919fc25e454d26d9fd004e03bb</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7390f75d-3728-4f1f-a743-6a67514c41e9">
+        <IndicatorItem id="4007df14-0ee6-42ae-9908-599c82a5a224" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-ocr-9.4.0.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="98d103e3-827c-4ce0-b579-7517419c8eae" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">768ee422a113dc1ae0310f6bc4d7c66d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c3dc119b-3299-4f71-8595-e23bfe854cf6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">cba8e646e951dbfde33daddc1ad6429814dad1ae1786c886948ce9ed7029f487</Content>
+        </IndicatorItem>
+        <IndicatorItem id="570633df-1616-40ae-be28-f753ff9e7ec6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">41b844cd42208eab05e203b5e22712eaf568d133</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="6dd3513e-16aa-4711-a79d-1abda1b168cb">
+        <IndicatorItem id="4b7973fa-24f4-469f-a15e-650a2ce50fc1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-translate-2014120801.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9701277c-eabf-4c27-aa2b-1ce2ccb7bb7e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">a4d16a3874aaf01d69c27032cb8988c3</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f07709ca-4572-4094-b393-06a985761975" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b15b2acbe02d7b0649b41d1fe7e0cd008761cba28d20c5d9fa9c17e3a430d0eb</Content>
+        </IndicatorItem>
+        <IndicatorItem id="dbe24604-12f5-45d9-87aa-6d4d7905eeb9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b70d21894318a95717db2c5113be455ccd4c72e0</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7ea4f327-ff1a-499e-b04c-ff30c3ffba88">
+        <IndicatorItem id="d410d621-e66d-476a-89aa-9ca213183235" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcs-translate-9.4.0.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ec668d4f-842f-40ab-8f39-5cb2aa4026b2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">168b06ee1219ada0afe184f9a70d12a0</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0510a852-5fab-4c43-acb3-29ab1a0e8c1f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">cc87e067021f8b419cc73863d26bd54e25b6f4c8149d6d331ba50e54aea917ad</Content>
+        </IndicatorItem>
+        <IndicatorItem id="da2d079f-ab1d-49de-bf59-6f7ba63915e4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">d981a1a553729bc6ad875d57825dda17b226c385</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="c4522ebe-e9aa-4371-acc8-72dcece830ad">
+        <IndicatorItem id="d0f9c3c8-c759-4921-a761-f31dc6885c85" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSWin32Dropper.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c7c046fb-5ed9-4ba5-8736-f1ea91bad92d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">32fcb852290c66212c9f5377313b3c54</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ecfe82ad-c144-464a-aaa5-af2a0e2173bd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">0ca7fafd58f8ddca6dd182790b1a634205f45bac5c4a3ff4cecc3473d0c47726</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e1045d30-ff91-4f4c-a303-67d8d900088c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">97400f2cd6873187109fb9a4be4cc199067e8e4b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5641ed51-0cd2-4ccc-b093-a1f9f0440176">
+        <IndicatorItem id="ca6ccd4f-e649-47cf-b13d-548298f6c309" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ros.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="77c533a4-a15f-43a1-96e6-cfad25b2fa14" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">251de11b2d47bab208b578db6f4aa38f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8a7aa164-90e8-40f9-8078-8c1b620754e1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a9af1d410b796a7d89050bb8189048260564a1ff0b94db25d0f465ea18b1c02b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="11c79e22-3158-4ce9-8193-d58181b443b2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b904f58d5bfd82d0778bdc9911f3b2193398e7cc</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="6760fc4c-0248-4876-aeac-b6d7b986f214">
+        <IndicatorItem id="e9a7491b-1f3b-4578-acba-0da48ff23b53" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">scout-p.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5e8cc942-8f82-4584-b09f-7b9893baa18d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">2911e7d0f7a9ee343532865de81b1cc5</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7a411fae-858b-4a99-aebe-b84db6c3d937" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">9db48e1cb712104830461c062d0a93f8e3b4043c0ab8b2dc0e1f5599827f4e21</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4560ac6f-7b61-4b04-9707-0d4bb01ee7c9" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">5ab36b7bb8b782cdc3a4670adf3afa2dabc978b8</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7c1a5d8d-8914-451b-b8a9-b3b71e512e41">
+        <IndicatorItem id="e9f183b1-4f58-4c02-9c61-293f3021c9e1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">scout-pulito.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="dcdd09fd-9fcb-4f64-9cc9-074a4879c406" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">b8bb19a432127cae3680ab46140c4789</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0619bde4-def6-4267-a658-d1fde8051738" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">5a45524e9ad739585c3851b32f660d777624c811d0b293b3474fa2568e8022d4</Content>
+        </IndicatorItem>
+        <IndicatorItem id="63858b92-361b-4c9e-8a78-20d946023456" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">bab514067c72f51786054136d2e6ab927c62b275</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="cd386817-6829-4183-88ea-5ea3bc25d38a">
+        <IndicatorItem id="dcc6c7a5-5687-4db2-9f6f-65e56acafc80" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">secondstage-20080805.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="434d7821-38d8-45b0-8c35-27ccfc794b41" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">2c367d915ca37e237df16d8548151a8b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3ff0d178-e4a1-4e60-84f1-e0020a209502" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b40d0ed8d1b7bbd0d52990ccbb7e927777d9854640c6c4b0adc683d55a965758</Content>
+        </IndicatorItem>
+        <IndicatorItem id="05c9c071-afea-4a69-adb1-573346abeee8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">8a0fa4074403caeef809113ba7c84eba4404ed9c</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="5c19c62d-51a3-4835-a9b8-7bac04d23425">
+        <IndicatorItem id="1c4db644-a1d2-4123-8f50-ab1d25a7427f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">seg_encrypt.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1bf0b9d6-545a-4eae-819b-74de37a4ed8f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">4b5d19d8a0bc70b2165144cb9be227e7</Content>
+        </IndicatorItem>
+        <IndicatorItem id="75d207ae-b98f-42ef-9bba-ffe000fac4e4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">8306c3a000636a21275774fcc17cd0bf75d1959bd9ea6bdb272666fda8494649</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d4a5cf97-e21f-4c64-8753-92b828c3e360" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">09920b2f0d20df022da507ab7b334392f7380cb4</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="179aa93c-2753-4d70-933b-95ea28fc7105">
+        <IndicatorItem id="319d3228-cd83-4a70-b3b5-398772d7aa83" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Setup.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="122186e3-274a-40ae-8a08-5ea6101a3bd1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5bad3163f9caf8686c7b9e43934a696f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="06d7d795-48b1-47ff-b0a7-c50a4f410695" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">988246ec5ee40470dd1c6661f7509d43dfa3debadd66ae4722a091935ecb56d9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3ab4df37-56ef-4b8a-9cb6-eaf41aa8a7dd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">7b2507e7e06044fe193b811b7c6ee3768652fc67</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="541d41da-3492-4b8f-ab76-4c7bb2f24348">
+        <IndicatorItem id="7b952a77-c2e1-4e88-9415-a71bcaa926fd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">setup.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="430f22c1-f6d7-4d6c-92ed-9df528b654d1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">c219ac463ef4bb377b0b5e7ec19ce976</Content>
+        </IndicatorItem>
+        <IndicatorItem id="59defdab-df49-480a-98f6-bbb34a379c62" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a5948e46db292b61d4c4032a7c7af15453477dd6ce4453daa4a6753c7763d873</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8cae9e5f-e6f4-4f29-aae6-4c1e15aae341" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">a56a1b3f473346f0395c0de433938dbf4fa25a11</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="8fd0362a-5581-4448-8f5b-9b123f1b8bd5">
+        <IndicatorItem id="d85792b0-253a-440a-bee6-54b864fe0c8c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Setup_.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4f61fb5f-8610-4a4e-bf9f-59c663033843" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">e1e36fa0c482c71fd777be049272f7d2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="dbb2674d-0568-4546-88bf-d6b8e54a1a99" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">e32cfd415d5aee289a62a02b28b7815346cd150d70c0e1f95bb92ecf26a855de</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9b86b42a-d056-400f-a4f0-31e07f4dc523" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ded04333c0eeb0f7978da4f298c191ecf42f98c2</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="f049e131-f01b-4fbd-8cc8-071114828545">
+        <IndicatorItem id="3d5a4c52-5977-4bfc-9036-3b69ada71bc3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">SETUP.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9afea296-2239-4c67-b513-6dce2c9ec17d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">2377d5fa8c47ed262d49575e2e612433</Content>
+        </IndicatorItem>
+        <IndicatorItem id="1c6fe5b6-d730-44b5-afbf-7deed98b9728" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b524abb464b30366afff9b01da259432f76fef62a7b9d128284e289e76b3da16</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ea0513e6-8881-4c6c-a7a3-ea990f0c739f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">f3c3f9e3139efb822e7b574898e95c38498462c0</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7158526b-9272-4744-b3d8-e77ca068433e">
+        <IndicatorItem id="a8751b35-cc1b-4d5c-90c3-8318cbeb99a6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">setup_Universal_U3_Customizer.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b53afb3e-ecbb-498e-9056-11128faad38f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">448975cbf086c450d1ac6285f1b57e95</Content>
+        </IndicatorItem>
+        <IndicatorItem id="179a384f-8996-4eff-9c61-f082ff542575" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b606cad7024a165b899e3d2ae9625e6d0f207928eb2838a6c4c8b26ddd583bb8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ce1ba968-5cdb-43e1-8341-298de5b4adc5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">e4c874697e71bb3b3b7fa0d5142f5c28df786313</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="46e5ebe6-dc97-48f0-95dd-4454546e3465">
+        <IndicatorItem id="bc07ca00-7bb6-4f68-97fc-fdc73400be74" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ShellcodeInjector.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f74b1623-7220-498d-bfa8-a67b97aed1fb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">a835bd1a588d516e8d9b12c7b85d54de</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5f1e2284-3284-4aa7-b47d-bd12f43595ec" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">31e9433eccf1c150462b705af11eff50587d25526225d0c4ba07312af0c81969</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9ffb2b95-ab5a-4fee-aa6e-2e69b5e28bc7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">4357e25f04f902a67604b8b9a6a122a9d3ca0357</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="4e7800fd-c01b-4934-962c-d75dc80d7dbc">
+        <IndicatorItem id="9ac2441c-6d35-4860-9704-182a0a179577" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">sigmake.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ef5522cd-c209-4506-9f28-7bfd28854f96" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">014402d32082497d9fae6b339f358401</Content>
+        </IndicatorItem>
+        <IndicatorItem id="7b53a42b-436a-4996-9157-16326ac2d6b8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">941ceeb2cbe1969dc41059e0766b5d6df687e8e8d96e31efea71699686ab6b9e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="ada32362-b07f-4c1b-8038-6ef8214fd40b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ea072de4b781749a694628da0758c934ce9cb0a4</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="dcf9fd19-ac8d-4779-bb48-f512c98768e2">
+        <IndicatorItem id="19cfd740-e768-4d90-afe9-5907d4cc47b3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Sleep.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="57b1ef25-a25a-4766-bf71-91734f529d2d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f413e8519a67390e4618fb3653250572</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d9aeaf5a-f9c0-413b-b87a-b2de6ca73693" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">adca333d2cee959c9323327ec8b3abd1193f34c520b80e4f699b49f70e14971c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0575baf0-e53f-436d-805f-fdc4cfc5618b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">87c6760c13c17e35d90a203a2acacfdf2ada0ed2</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="2085ef21-a62d-49ef-aa2d-c92b29347696">
+        <IndicatorItem id="f9f74c20-2530-4b8f-bb52-4b100b43032b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">so_1.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="99e6fcc6-d1bd-4a75-8457-939aa7215879" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">8a19326b0ecbad83058b0ab803bad254</Content>
+        </IndicatorItem>
+        <IndicatorItem id="12edecdf-e9e8-44e1-a915-1d30e58e45bf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">2c72175f96c651eea3d3411efacf73e0fb3e7543451b73f5e2521f47be67f006</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8c1a3e39-046a-48f4-882c-2cb1134cd217" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">f80dbd487b738df05fe27b8d5238cbd3e429dd97</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="8ff733a5-1b93-48fe-b7c1-d6f8d210b94e">
+        <IndicatorItem id="2ca9208a-e01a-4a5c-91ce-30bfc9a36c06" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Soldier.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="aa40b44e-0328-43bb-b9c0-3e51d8659acd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5169e6cf3d06429b94bafd835b5e2791</Content>
+        </IndicatorItem>
+        <IndicatorItem id="009c1052-ce39-4222-8cbd-3bae1ec00719" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">ec0e0c640f83d91fc50d657870f4b1d07bff0300ad6ba841bc7a211160ca79bf</Content>
+        </IndicatorItem>
+        <IndicatorItem id="42ee98e5-276c-42d8-a817-3842fc2c8b35" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">ac63f0f2ccfd7ef77b1369130e2d4316c306b4d8</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="1e814313-f53c-4c47-9a4b-b5e945598595">
+        <IndicatorItem id="3418a00b-bde7-4329-bbf6-44f078ba56b0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">test_fs.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="76ff923f-5db3-4bb8-8023-d4940660217b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">b1c1f4f3e9189ca1763e8b2ca3bbfdfa</Content>
+        </IndicatorItem>
+        <IndicatorItem id="904f338e-d688-4ba1-9741-dd01afda9d77" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">cedaf3f2bdbd936ca276b636bb119136d67e0e2fa74614442c95bdbae6c50585</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3a6d13b0-18e4-483c-aac6-ee2f2377d469" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">c7d3c7b4ff167ccc0957f5659c5591f2ed43e70a</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="71e8696f-7a1d-4c8c-9ba6-e2e96356402d">
+        <IndicatorItem id="20afaa26-152f-4d80-bf97-08321f730885" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Themida.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b2f30841-b47f-4363-adb6-cfc6385aff51" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">37b5ee810eee08eb46da2d4d1710262f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="30872f7b-4fca-4cd9-a0e9-3aae02a936a4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">f3fc6d8ed53b5be3be601281848d26134fa85ba4737ab69b13a50a3a8dd523cb</Content>
+        </IndicatorItem>
+        <IndicatorItem id="33806120-6506-48b3-b5a8-b4183ebbc6d8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">0ad4455380b6c2224bf6d0d5112653db2e05ab28</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="ee735bdf-7a10-4ce0-9918-6b05e053795e">
+        <IndicatorItem id="da02a284-fb7c-4898-b87a-4d1ce789aa3e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">tor-browser-2.2.35-7.1_en-US.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="51970a31-971d-4634-a1f4-8d0ddc8133b8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">fa6d890c0780e5bb42550ac52e46e94d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4b73a992-9fb3-491c-868b-aca1cb6bc1f2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">3b471511630e5ae364c28de07dae041a5b44a040f49e15735afa509e44801863</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2c78ba3e-3825-447c-a931-9607f9694be7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">7c1db3fff72b3c8180fe0eedd092328e29b61588</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="4a089acc-698e-4410-ba4b-e629ffc24d79">
+        <IndicatorItem id="7d156148-0f14-410c-8032-44541aad7b70" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">uTorrent.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="13e955c1-9661-44be-9044-210ad97a6ff6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">432f4e8794a2ea8a64e4c75ea80b790e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="70022e4e-b60c-49db-a49a-4369c9d64ed8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">d94b971cecd864fe6153ebe94a775157f3cdb69e8ad802eb78cfc0136737c0f2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e4e3c9b6-9636-416f-b94b-d72d4a933684" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">1f78800e17ecf9535eb695b5665f1da4258be70b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="05355984-15c8-4c61-9801-ecb4bd4e17b9">
+        <IndicatorItem id="614e9b66-f5b5-4b61-93f9-d7a8e4af4df3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">VMProtect_Con.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="bc194aad-6e57-41f0-8ef4-9ab550081faf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">5cd44e29316435cda62790801ec4f473</Content>
+        </IndicatorItem>
+        <IndicatorItem id="aaa6d891-77fe-485d-80f1-4be9815860b0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">2b5560f11b24de4fac1b0998cfe80138c2a4f87bb15f6eba6f7f58a5cf1f8622</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3b38c66f-e2ef-486b-beab-efc9f812a3e6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">50651dbc0af0ff5f1623c468fd4ed4eeb3f2460d</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="0046a2d2-e7c8-4f48-b127-1b78cfae2a4f">
+        <IndicatorItem id="0dbfc1a8-8800-4199-bc0c-81c0313962a7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">VMProtect.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="87f1c0b5-100c-4a4c-a2b9-4214cc3f47e3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">3b726e15b2e161a5acadb1a1bce87cb9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="cc134346-bbd0-4e4a-be49-2cb5612b0283" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">60562a923d1fb595d6e144a0957bc5f9fda0d3f105c316ab5e7d7cd27ff0c27f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="46290018-d04d-496b-b9ed-1da6a646ab0e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">5fe9dad18883d1dc64dacb7aa8dd7988ca7b52bb</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="94f5b7e5-7761-40ab-a912-10fa31d450cd">
+        <IndicatorItem id="fb55947b-e98e-430a-bd98-f767b50bd507" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">VMWare-workstation-7-keygen.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a67097c3-e6d2-41b0-a87e-74a545a8df13" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">309ad3a96832730545d1ff1f4fdd8de2</Content>
+        </IndicatorItem>
+        <IndicatorItem id="00dd8263-2b74-43e9-a5f1-621ce6e6b94a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">0a5c0224092468a4669f04721e291e3e89653d1ecf436c5c4dd7f1f8df4d0ff7</Content>
+        </IndicatorItem>
+        <IndicatorItem id="866d8ae6-fe78-469c-999e-886cb9900cda" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">1b8f53c2ee42fff1f333223e82d3e538792b9778</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="62228407-b4f0-4fa7-86d6-5917b64bc81b">
+        <IndicatorItem id="9f2fb3d9-554e-4dd1-ac13-bfeadbc71c16" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">wapsender.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="de8eadab-ea05-4e06-b23d-b922b9407a34" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">29d51c29dd3f0811d403c329053a2f35</Content>
+        </IndicatorItem>
+        <IndicatorItem id="f69badfe-a4a3-4183-af93-4247fe8db7fa" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">f1ab31f87585c824381ecd5411441bb1c755d81dd0f42bc08fbb061b9066fba0</Content>
+        </IndicatorItem>
+        <IndicatorItem id="19b96a5d-4b3c-4f38-bcb5-a0b1e297ac53" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">6a951c1da9080886fb931d01711b225c1368e6e6</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="cec3a572-e5b0-4d3b-a899-972959d6785d">
+        <IndicatorItem id="1eb7b8de-b70d-4cf2-add9-58e89e32cd39" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">win32_remote64.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="49035831-30cd-4c72-870f-dec69207ca93" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">1fc10a99ce2652ba0ec7bed0f8f05c2c</Content>
+        </IndicatorItem>
+        <IndicatorItem id="452f4b9b-1516-45a9-9bb9-bbc51861d011" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">f08e6bc6c3a6771f697d4f724bb238f837f61d988c29a2d77dd73cd36a4a38b7</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2706547b-0ae0-48ab-a099-c2456dbe38a6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">333a5d4082808206eeedd309e02d88e720587e4f</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="be838f3f-6728-465c-a406-dbdf5ae81bb9">
+        <IndicatorItem id="b92bc7fa-9553-4400-9b3b-2a8a7ac9691c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">win32_remote.exe</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8ee6c7dd-614a-4e86-a078-cc9c6b8b1af1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">aee7029335a4df8ac44d3587e41c21dc</Content>
+        </IndicatorItem>
+        <IndicatorItem id="4867c6e3-e78a-427f-ab12-45307aa535e4" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">3f85279eee498578935e7f51881f8411be5ac7ba45f2334699230cd0b9d60032</Content>
+        </IndicatorItem>
+        <IndicatorItem id="60f8bffa-cf22-4e1c-ad41-099f872ff68d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">e19a240f49e953a8ec9a7efc3b0e47cc8ecb07c2</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7bc4d498-453d-453a-bd9a-804893c10d0b">
+        <IndicatorItem id="6cd53b2c-b58d-4dd2-8b8d-1d8ec437b11d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">WINWORD.EXE</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6391447a-a3dd-4730-b662-221f32eaf0cc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">60b9933665169020a3565781e4058e08</Content>
+        </IndicatorItem>
+        <IndicatorItem id="871662f3-0bf4-4e65-8799-10436e3af35f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">200c0623f75433c1e2821d930e6f3e072c5e06f2bd1770551595acc3b170febf</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d62e320e-bfe1-43b9-b7e3-fc4eb5f128c1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">f039f975acec4b8b60b7619cc75e0b87d809315c</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="d040df86-abb4-4e13-8fdd-a6a9405016bc">
+        <IndicatorItem id="4adb10d6-222c-4b63-a1b3-399822400346" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ApiHookDll32.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0dfa527b-5edd-4966-80c9-543eec828796" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">713c269faa5f650710997004d3be6971</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b1ac84f8-4223-4591-b7ac-e7f5d4222a20" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">6739dd4361c559fd9099dfc967b06eb5bac95ee8693986ac29c7b368dc7cff08</Content>
+        </IndicatorItem>
+        <IndicatorItem id="6fc167c4-4c0a-4935-a01a-9144db97787d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">dd6ac4da70c52dc6aad69590c2335925859c838b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="4cfa17ce-40bf-40c1-980f-99e3c1ce476b">
+        <IndicatorItem id="769f47ac-9a6b-498c-a3eb-2b5d7fa437f2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">codec.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="db454d16-9c3c-4d98-80a8-940e72c8afbb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">48d638a3194f8740d9f05faf62670ff9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9d69995e-8f58-48e2-9371-65636c3f08c6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">fb3b9464e866b35b3d7a3b506f967b32e1c2015e0703780c89993ce6d50a0ea6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="eef393c3-93c9-4e99-9882-c42f6514dcc3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">1351e784ebdffacf0fd143c07581136e94ca2319</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="7aca4f2e-0722-4414-a671-3425b920e281">
+        <IndicatorItem id="77b91e4f-77ea-4c56-9106-2aba7e1fe89e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">core.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5da5a052-70b2-4de9-8c86-4f459244e4c0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">9bce542aa3fdd21c63e18d453ae8039d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e4db6170-1fab-4c3f-b2b5-7f8f06f877ac" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">957fcc2d137e9164635831dd0ab8bca8079ec8b1a4c2eb6e8ac254c5732b025b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="fcd05303-1cfb-4b0c-b99b-5cf6f115effa" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">a3a7545333638ec13ad33af6c4ec32a2d4f56c5d</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="86901347-af6a-4447-ada9-02a333bd7d2e">
+        <IndicatorItem id="97b99d9d-d618-41d4-8b7f-191c0c94b4e7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">dll64.win32</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0957f302-6642-4913-98ad-97da94aec4ad" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">33f2a0070170ab861e92435114db52d8</Content>
+        </IndicatorItem>
+        <IndicatorItem id="0f3da3cc-2307-4298-9745-4fb0ec1d5b7f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">bfb2ac272617e4af5ddf176bb4bffcc090e47b1208f4285a7108d6a59ec51837</Content>
+        </IndicatorItem>
+        <IndicatorItem id="09de70b1-d76d-49f3-96b6-a333c900c2fd" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">4437315b462fce721d16edbe77362b0e634aa559</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="126e0240-3540-4c5b-9ffc-f4309cba1223">
+        <IndicatorItem id="177130da-d18c-4b0b-80d8-0be341d6ceed" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">elevator.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b3419271-e193-4344-abb5-fe1f731b3c8d" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">56eac983a8caa8c0037c6ba25e9a2d9f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="82ad727d-dafc-49a1-bdb5-bb1c8511ba03" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">fc609adef44b5c64de029b2b2cff22a6f36b6bdf9463c1bd320a522ed39de5d9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="b0dc0df7-6922-4cdf-a905-bad6be16ed30" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b7ec5d36ca702cc9690ac7279fd4fea28d8bd060</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="30d7ad5d-9f94-4e19-9ca5-f6b1d0d9f4ad">
+        <IndicatorItem id="fed39ec7-7cf0-4149-944b-209614767482" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">H4DLL.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8e982c16-4c02-4295-bd84-99f10dae27cc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">aaf26a0477841b45969fdce35bd2e1e1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3bfd242c-07c0-4a49-ad16-eb80c22cab32" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">d9c55606c757e78940c3a22fc25ae12ed93a68c9f88983e58cd4795047504246</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c138973c-ed69-478a-98f2-1a3a362bc28c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">e113e2904aaae7aa5c2438fea757846cad8a7e9b</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="92eeee22-6ea4-4ae1-9eb3-a3a1c818a132">
+        <IndicatorItem id="9b883fd1-2950-44d9-9fc1-8d8535f77ccc" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">H4DLL_NonStruct_Kaspersky.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="8a9155bf-29e0-4f96-8862-a29c16c80f9c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">32d9d4da5e7b99e2d70200d14003e830</Content>
+        </IndicatorItem>
+        <IndicatorItem id="68f37c46-68f8-41b6-920d-0f94150890e0" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">a61c9ae6ac4149619f058a09b83e7ba16bf6bf2492201fa299c25495ef01ba30</Content>
+        </IndicatorItem>
+        <IndicatorItem id="00c2cca4-5332-4613-930e-b1e1ad3e0cb3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">83852d86836e9d2193067919815418972e5cc03a</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="0093caae-d7d2-449c-8564-108e1872b575">
+        <IndicatorItem id="25390f06-1c04-4b7c-aacd-ec23ccb0d21a" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">H4DLL-VISTA.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="602786c3-b78b-4dd6-b5be-b4ac65af38c3" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">738cf6db1f93006967ed1aeef87c6ba6</Content>
+        </IndicatorItem>
+        <IndicatorItem id="d7feba5b-7256-4545-904e-0379d4a6662c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">5f6bc6573d006609d1f0b5c3d051dc6eb5b30dbc60c4e2e7c7b6826434c6a59b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e6abab13-0f40-48ef-8692-47c634ac2322" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">d89f0d3e65532a41615d0ee21f2b2379eb0b27d5</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="bf0578c0-738b-4ffe-9a8c-c6f1f4b9cf20">
+        <IndicatorItem id="22752f96-a6b1-4a10-a540-6efabb8886cf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">Mpk.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="17a82fe1-7b6a-47ea-8057-aa8adbb9e733" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">f713c1e740d67292db2d96c7755a63bc</Content>
+        </IndicatorItem>
+        <IndicatorItem id="681d722a-bff3-41e0-92d1-3f18445818b8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">9f3673b51a622dbe8ea5f92ad37ff12ed0a03ff5c30a9ca20575dca08c624fa3</Content>
+        </IndicatorItem>
+        <IndicatorItem id="2c6ac715-2078-42b4-a089-527026e44519" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">0540e5eacd37ea3285f8a239dd72e3e7e4faf33e</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="0ba15f6e-39e4-4411-8c18-2ae922d452f1">
+        <IndicatorItem id="462130f5-9436-4478-8f78-6b7e0578b24b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">old_cert_elevator.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5789e785-5338-4439-b22f-16dfaa9fe9e7" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">56eac983a8caa8c0037c6ba25e9a2d9f</Content>
+        </IndicatorItem>
+        <IndicatorItem id="c7093cba-8496-4464-9c29-36488f1a2a73" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">fc609adef44b5c64de029b2b2cff22a6f36b6bdf9463c1bd320a522ed39de5d9</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a45c893a-594f-4b1d-aa49-2e5f07d6333f" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">b7ec5d36ca702cc9690ac7279fd4fea28d8bd060</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="0d88142a-dd7e-49bc-ae39-64f34298fa61">
+        <IndicatorItem id="7274b9cb-4e48-4c78-984e-69f901210fd2" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">PMIEFuck-WinWord.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e9c2a447-f613-4ee3-8208-0e12a4b21948" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">b58e692d0558ba1b9cfcdda2775c7fac</Content>
+        </IndicatorItem>
+        <IndicatorItem id="a4705d07-1580-45c9-841d-e53ab40080f8" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">ad55c2dcf7e3373ea074061d119c891b34e4364cd7f5f679b475b5ec3371592e</Content>
+        </IndicatorItem>
+        <IndicatorItem id="de17361a-7915-4f58-83f4-b47d90ddfc0e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">d2cc4bf197b9d408bcec69252725bbcdb516308c</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="cd0f38ca-ffcc-4800-a5a9-b9f6a51dfccc">
+        <IndicatorItem id="06489490-fc4b-4b8a-85a8-391bd926b1bf" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">RCSMobile_2011032101-debug.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="231eeafb-599b-4be9-bab3-823874531141" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">63de9e55e07f81e6d38eb859483b103d</Content>
+        </IndicatorItem>
+        <IndicatorItem id="af2c61a1-58ec-412f-94b3-13e0dd006e1e" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">6d22dbb5285391be5dcce7a2aed9f14b7ef57de90fd5b02d4bd7ba07d4a5d455</Content>
+        </IndicatorItem>
+        <IndicatorItem id="5b652cbd-a7a2-4e02-9eb0-14e01c49d228" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">9cfa6d066024a458e133fb9cfbafbdfa0b1c64f9</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="0c19e942-8038-4b1d-a665-03b94e2bf279">
+        <IndicatorItem id="186a33a8-c40f-4878-88bd-54cb295a04da" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">rcsmobile-2012013101.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="72c771ba-1130-4f4b-b7ff-df2ea95da93c" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">0df77ac381a54c34bf3f12d13f516be1</Content>
+        </IndicatorItem>
+        <IndicatorItem id="858aaa64-9a86-4cb3-9e97-b78c87e94731" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">5e75e0babe92f1a7691a43641fadb7be84d4d273b8bcc6cce5dfeb5523a6b709</Content>
+        </IndicatorItem>
+        <IndicatorItem id="81fd81ac-5b71-415c-9a5d-897125ec3ff6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">13b20e7945eb7342540b5fab2eb2f03063518239</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="a9d456ee-2b2c-49db-8051-7605d5445a49">
+        <IndicatorItem id="e13b51e6-d648-4be3-9e20-5ff4dee2d50b" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">setup.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="261f7dd9-308c-48b0-a96d-5da2ce67da15" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">1c5764dd71b9109dbbcd83201be2ceae</Content>
+        </IndicatorItem>
+        <IndicatorItem id="3bb4df72-ed86-414c-a7e8-f66cef813ae1" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">abbac3dda22f825197dd65b8c1076c5ab8d7ecaa2ce2821b242f63154eafce3a</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e060333d-66ad-406d-8745-21107b0223cb" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">f9860169568558df2eb06b9a7ab9d0a89f45cd44</Content>
+        </IndicatorItem>
+    </Indicator>     
+    <Indicator operator="OR" id="77241f04-1add-4c78-831b-e27fd3be84f3">
+        <IndicatorItem id="2902bc9e-7ede-49e1-8456-796123ffa3a5" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/FileName" type="mir"/>
+            <Content type="string">ArcDropper.dll</Content>
+        </IndicatorItem>
+        <IndicatorItem id="9a8e73ab-b4dd-4d72-889a-efa8849889d6" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Md5sum" type="mir"/>
+            <Content type="md5">a226d93f726bdaf119088e62b9b70989</Content>
+        </IndicatorItem>
+        <IndicatorItem id="e3ee841c-7020-454e-a12b-01ba8c739616" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha256sum" type="mir"/>
+            <Content type="sha256">b20b198d9e3af27ecac4a83b66234cae4eef6db0c1192b6f9ba9ca946033034b</Content>
+        </IndicatorItem>
+        <IndicatorItem id="af63a52c-9573-4b05-8b54-72424eec6d97" condition="contains" preserve-case="false" negate="false">
+            <Context document="FileItem" search="FileItem/Sha1sum" type="mir"/>
+            <Content type="sha1">df7e96430c086efef38810de0ce981f7c4b5bd3a</Content>
+        </IndicatorItem>
+    </Indicator>     
+</Indicator>
+</definition>
+</ioc>
