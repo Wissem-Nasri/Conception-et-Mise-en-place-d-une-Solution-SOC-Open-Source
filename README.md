@@ -116,10 +116,6 @@ En résumé, cette procédure permet d'intégrer Wazuh et The Hive afin que les 
 
 # Projet terminé 🎉
 
-Le travail est désormais terminé ! 😊  
-Les traces de démonstration seront fournies très prochainement. Restez à l'affût pour plus de détails !
-
-## À venir
-- Fourniture des traces de démonstration.
-
-Merci pour votre patience et à bientôt !
+Projet terminé 🎉
+Le travail est désormais terminé ! 😊
+Les traces de démonstration peuvent être consultées directement dans le rapport du projet. Restez à l'affût pour plus de détails !
